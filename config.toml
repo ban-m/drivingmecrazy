@@ -11,5 +11,47 @@ highlight_code = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+# Used in RSS by default
+title = "どうにかなりそう"
+description = """ゲノム生物学/計算生物学等の論文についてのメモや、他の覚書等"""
+default_language = "ja"
+
+# Theme name to use
+theme = "hyde"
+
+# Which theme to use for the code highlighting.
+# See below for list of accepted values
+highlight_theme = "base16-ocean-dark"
+
+# Whether to generate a RSS feed automatically
+generate_rss = true
+
+# The number of articles to include in the RSS feed
+rss_limit = 20
+
+# Whether to generate a tags page and individual
+# tag pages for pages with tags
+generate_tags_pages = true
+
+# Whether to generate a categories page and individual
+# category pages for pages with a category
+generate_categories_pages = false
+
+# Whether to compile the Sass files found in the `sass` directory
+compile_sass = true
+
+# Optional translation object. The key if present should be a language code
+[translations]
+
+# You can put any kind of data in there and it
+# will be accessible in all templates
+
 [extra]
-# Put all your custom variables here
+# hyde_links = [
+#     {url = "https://not-miso-inside.netlify.com/about", name = "About"},
+#     {url = "https://not-miso-inside.netlify.com/blog", name = "Blog"},
+# ]
+hyde_links = [
+    {url = "/about_me", name = "About"},
+    {url = "/blog", name = "Blog"},
+]
