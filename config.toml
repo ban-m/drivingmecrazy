@@ -2,14 +2,14 @@
 base_url = "https://drivingmecrazy.netlify.com"
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = false
+compile_sass = true
 
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Gutenberg
 highlight_code = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
 
 # Used in RSS by default
 title = "どうにかなりそう"
@@ -36,9 +36,6 @@ generate_tags_pages = true
 # Whether to generate a categories page and individual
 # category pages for pages with a category
 generate_categories_pages = false
-
-# Whether to compile the Sass files found in the `sass` directory
-compile_sass = true
 
 # Optional translation object. The key if present should be a language code
 [translations]
