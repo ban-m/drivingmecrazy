@@ -45,7 +45,7 @@
           {% endfor %}
 		  <li>
 			<a href="mailto:ikkaidoh@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://twitter.com/Ikkaidoh_Yoh"><i class = "faB fa-twitter"></i></a>
+            <a href="https://twitter.com/Ikkaidoh_Yoh"><i class = "fab fa-twitter"></i></a>
           </li>
           {% endblock sidebar_nav %}
         </ul>
@@ -69,6 +69,9 @@
 		  </div>
 		  {% endif %}
           <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+          <div class="read-more">
+            <a href = "{{ page.permalink}}">もっと読む</a>
+          </div>
         </div>
         {% endfor %}
       </div>

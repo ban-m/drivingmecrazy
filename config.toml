@@ -44,10 +44,6 @@ generate_categories_pages = false
 # will be accessible in all templates
 
 [extra]
-# hyde_links = [
-#     {url = "https://not-miso-inside.netlify.com/about", name = "About"},
-#     {url = "https://not-miso-inside.netlify.com/blog", name = "Blog"},
-# ]
 hyde_links = [
     {url = "/about_me", name = "About"},
     {url = "/blog", name = "Blog"},
