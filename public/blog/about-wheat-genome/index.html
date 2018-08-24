@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Fond awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>どうにかなりそう</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;print.css" media="print">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;poole.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;hyde.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;override.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;rss.xml">
+    
+
+    
+    
+  </head>
+
+  <body class=" ">
+    
+    <div class="sidebar">
+      <div class="container sidebar-sticky">
+        <div class="sidebar-about">
+          
+          <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com"><h1>どうにかなりそう</h1></a>
+          
+          <p class="lead">ゲノム生物学&#x2F;計算生物学等の論文についてのメモや、他の覚書等</p>
+          
+          
+        </div>
+
+        <ul class="sidebar-nav">
+          
+          
+          <li><a href="&#x2F;about_me">About</a></li>
+          
+          <li><a href="&#x2F;blog">Blog</a></li>
+          
+		  <li>
+			<a href="mailto:ikkaidoh@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://twitter.com/Ikkaidoh_Yoh"><i class = "fab fa-twitter"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+
+    <div class="content container">
+      
+<div class="post">
+  <h1 class="post-title">コムギゲノム雑感</h1>
+  <span class="post-date">2018-08-23</span>
+  <h2 id="shu-kukoto">書くこと</h2>
+<p>先日、Scienceでコムギのゲノムに関する研究が出版されたのだが、次のような速報で取り沙汰されていた。</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">コムギのゲノム、完全解読に初めて成功 <a href="https://t.co/vYzyXelSPa">https://t.co/vYzyXelSPa</a> 異質6倍体であるコムギのゲノムを解読。転写解析も。Science原著↓ <a href="https://t.co/rE2FCQ8qfN">https://t.co/rE2FCQ8qfN</a>   <a href="https://t.co/OiZjFtA6vw">https://t.co/OiZjFtA6vw</a></p>&mdash; 俺のソース (論文紹介) (@OrenoSource) <a href="https://twitter.com/OrenoSource/status/1030290485535887361?ref_src=twsrc%5Etfw">August 17, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p><a href="https://doi.org/10.1126/science.aar6089">原著論文</a>から辿れるアルトメトリックを見た感じでは、このPostが、日本においては最もRT/FabされているPostになっているように見受けられる。</p>
+<p>一方で、私見では、間違ってはいないと思うが、このPostは、少しざっくり書きすぎだと感じる。具体的には、完全読解を『ゲノムの文字を全て正しく並べる』という意味で使っているなら、コムギのゲノムの完全解読は未だできていないし、より一般に、真核多細胞生物のゲノムで、完全解読されているものを、僕は知らない（線虫のゲノムは完全解読されている、と<a href="https://en.wikipedia.org/wiki/Caenorhabditis_elegans">英版wikipedia</a>には書いてあるが、これは嘘です）。</p>
+<p>今日は、そもそも『ゲノムの文字を正しく並べる』（ゲノムアセンブリを行う、と言う）ことが何を指しているのか、これまで何がされてきたのか、どんな技術があるか、といった周辺知識に関して、少し書いておくことで、140字には載り切らなかったであろう情報を補填しておきたい。</p>
+<p>一応、確認を取りながら書いていくつもりだが、もちろん、たくさん間違いがあると思うので、見つけ次第、Twitterやメールで教えていただけると嬉しいです。</p>
+<h2 id="genomuasenburigai-guan">ゲノムアセンブリ概観</h2>
+<p>次の説明で、だいたいわかった人は次に進もう。
+名前付けなどは、それが人為的である限り、じっさいどうでもよく、それがどういうものなのかが大切だ。</p>
+<blockquote>
+<p>ゲノムアセンブリとは、生物のDNAを読んで、読んだ断片から、ゲノム全体を構成することである</p>
+</blockquote>
+<p>&lt;-----&gt;</p>
+<h3 id="wakaranakatutaren-he">わからなかった人へ</h3>
+<p>ゲノムとは何だろうか？
+英語が苦にならない人は、Plos Geneticsに<a href="https://doi.org/10.1371/journal.pgen.1006181">『What is a genome?』</a>という、そのまますぎる論文が上がっているので読めばいいが、
+端的に言うと、『ある生命における全ての遺伝的構成要素』だ。
+もちろん、読者諸氏は染色体がなんたるか、DNAがなんたるかについて知っていると思うので、
+それらの用語を使うと、次のThe molecluar biology of the cellに載っている次の定義になる。</p>
+<blockquote>
+<p><em>Genome</em>:
+The totality of genetic information belonging to a cell or an organisms; in particular, the DNA that carries this information.</p>
+</blockquote>
+<p>『細胞や個体に属している遺伝的情報の全てで、特にこの情報を運んでいるDNA』
+ここで、『特に』というところに注目してほしい。多くの場合、これらは完全に同じものだと見なされているが、実際は微妙に違う可能性がある。
+まず、DNA以外の遺伝情報はありうる。例えば、卵子の中のタンパク質の配置などは、それが個体の発生に本当に役割を果たしていて、親も同じような経過を辿っているという点を持って、遺伝情報だと言えないだろうか？
+また、DNAをA,T,G,Cの並びと捉えるのも、微妙にずれがある。上の引用においては、DNAの化学的な性質や、結合の如何等も当然含まれるのだが、A,T,G,Cの並びについては、そのような情報は捨象されているという点において。</p>
+<p>ではゲノムアセンブリとは何だろうか？
+ゲノムアセンブリを多数行っているEmsembleというグループの<a href="https://asia.ensembl.org/info/website/glossary.html">Glossary</a>や<a href="https://asia.ensembl.org/Help/Faq?id=216">FAQ</a>を見ると、次のように書いてある。</p>
+<blockquote>
+<p>The genome assembly is simply the genome sequence produced after chromosomes have been fragmented, those fragments have been sequenced, and the resulting sequences have been put back together.</p>
+</blockquote>
+<p>（ゲノムアセンブリとは、単に染色体をバラバラにほぐして、その断片を読んで、読んだものを元通りに合わせることである）</p>
+<p>または、</p>
+<blockquote>
+<p>A computational representation of the sequence of a haploid genome, representative of a species or strain.</p>
+</blockquote>
+<p>（種や株の代表となる、半数体のゲノムの配列の、計算機的な表現）</p>
+<p>ここで、更に微妙なずれが導入されていることには、簡単に気がつけると僕は思う。例えば、</p>
+<ul>
+<li>2n、nの核相を持つヒトなどの生物では、nの核相しかもたない菌などの生物と違い、全ての遺伝情報という言葉の定義が微妙になる（もちろん、我々は精子や卵子のための馬鹿でかいぶよぶよだと考えれば、こんなことはどうでもいいことだ）</li>
+<li>ゲノム配列という言葉はよくわからない。遺伝情報の全ては、配列のように直列化できるのだろうか？</li>
+<li>種や株のゲノムという言葉はよくわからない。種や株は遺伝情報を伝えるわけがない。遺伝情報を伝えるのは個体であって、それ以外のものではない。</li>
+</ul>
+<p>一方で、これらは（私見では）研究室でご飯時にやるべきたぐいの議論だと思う。というのも、 ** 相同染色体はあまりに似通っているので、だいたい同じ配列だとみなして取り扱うし、** (この言葉は後で聞いてくるので、覚えておこう)、ゲノム配列はA,T,G,C上の文字列とみなせるし、同一種内の個体のゲノムはあまりに似通っているので、『ココらへんが違うことがある』という、一種の表を作っておけば十分だから。</p>
+<p>ゲノムアセンブリのとっかかりやすいアナロジーとして、本を想像してもらいたい。A,T,G,Cの4文字で書かれた本だ。それを計算機上に、A,T,G,Cとして再現する。やることはただこれだけだ。</p>
+<p>&lt;----&gt;</p>
+<p>一番確かで、簡単なやり方は、もちろん「最初から1文字ずつ読んで、最後まで読み切る」だ。しかし、この方法は単に <strong>できない</strong>。そのような機械がないからだ。</p>
+<p>では、どのような機械を持って、ゲノムアセンブリは行われるのだろうか？　具体的には、どうやってゲノムは読まれて、つなぎ合わせられるのだろうか？</p>
+<p>ちなみに、人の半数体ゲノムは、約3,000,000,000文字でできている。</p>
+<h2 id="duan-suo-xing-sikensa-aruihak-merji-shu-ji-jie">短鎖型シーケンサー、あるいはk-mer計数機械</h2>
+<p>まず、現行のゲノムを読む機械（DNAシークエンサー、単に、シーケンサー）のうち、最も有名かつ使われているのが、illumina社の短鎖（ショートリード）型シークエンサーだ。
+僕は販売員ではないので、詳しくは<a href="https://jp.illumina.com/">illumina</a>社のページを見てもらうことにする（<a href="https://jp.illumina.com/landing/comic.html">『ゲノムに夢中』という、やや病的な漫画</a>も読める）。</p>
+<p>特徴を端的に述べると、次のようになる。</p>
+<ul>
+<li>一回に読める長さは150文字くらい。（読んだ『文』のことを、リードと呼ぼう）</li>
+<li>一回の実験で、数百Gbp(塩基対)、つまり300,000,000,000文字くらい読める</li>
+<li>誤って読む確率は1/1000より小さい</li>
+</ul>
+<p>実際は、illumina社のシークエンサーにはいくつか種類があり、特性も異なっているのだが、これらの特徴はだいたいどれも同じだ。</p>
+<p>（原理が知りたい人は、次のYouTube動画がおすすめ<div ><iframe src="https://www.youtube.com/embed/fCd6B5HRaZ8" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>）</p>
+<p>本当は、454やSOLiDと言ったシークエンサーを紹介してもいいが、これらはすでに歴史の遺物とみなしても差し支えない。</p>
+<p>すぐに気がつくのが、これはほとんど『読んでいる』うちに入らないことだ。
+3G文字のうち、たった150字、それもランダムにしか読めない機械を使わざるを得ないことを想像してもらいたい。前述のアナロジーなら、『<strong>同じ本を100冊用意して、シュレッダーにかけて、出てきたゴミを渡されて、「はい、じゃあ元の本に戻してね」</strong>』と言われるようなものだ。</p>
+<p>実際、これはゲノムを『読む』というよりは、『ある文字列が何回出てくるかを数える』と言ったほうが近いところまで行っている。</p>
+<p>例えば、『リード長がすべて1で、限りなく読めるシーケンサー』を考えよう。これはA,T,G,Cのどれかを出力し続ける機械なのだが、ここから得られるのは、単にA,T,G,Cがどのくらい読まれるかしかない。要するに、</p>
+<p>A,A,A,A,T,T,G,G,T,T,C,</p>
+<p>と出力されたら、「ああ、このゲノムはAとTが多いんだなあ」（A-Tは相補対なことに注意）と物思いにふけり、</p>
+<p>AA.......AAGG....GG</p>
+<p>を『アセンブリ』として提出するしかない。同様に、『リード長がkで、限りなく読めるシーケンサー』を考えてみると面白いかもしれない。</p>
+<p>（本当は、もう少しパワフルで、『ある断片の、最初と最後の150bpを読める』といったほうが正しいが、あまりにも専門的なので、飛ばす）</p>
+<p>当然、誰でも思いつく要求は次のようなものだ：もっと長く読ませろ</p>
+<h2 id="chang-suo-xing-aruihaxin-lai-dekinaisukiyana">長鎖型、あるいは信頼できないスキャナ</h2>
+<p>現在、長く読めるシーケンサーには、2種類あり、それぞれ、<a href="https://www.pacb.com/">PacBio</a>と<a href="https://nanoporetech.com/">Oxford Nanopore Technology</a>が開発している。
+開発されたのは最近で、PacBioはようやく『PacBioとタイトルに書いただけでは通らなくなった』状態、nanoporeはまだ、nanoporeと書いただけで論文が出やすくなる状態だ。利益相反に当たる可能性があるので、詳しいことは避けるが、</p>
+<p>動作原理は</p>
+<p>PacBio</p>
+<div ><iframe src="https://www.youtube.com/embed/NHCJ8PtYCFc" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<p>Oxford Nanopore Technology</p>
+<div ><iframe src="https://www.youtube.com/embed/GUb1TZvMWsw" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<p>で見ることができる。</p>
+<p>特徴としては、</p>
+<ul>
+<li>一回に読める長さは20,000bpくらい。PacBioは長いと200,000bpくらいまで、Nanoporeは1,000,000bpくらいまで読める</li>
+<li>一回の実験で、数Gbp-10数Gbpくらい読める</li>
+<li>エラー率は10-15-20％くらい、Nanoporeはもう少し悪い。</li>
+</ul>
+<p>となる。今まで、150bpで耐えていたのが馬鹿らしくなるほどの進歩だ。もちろん、ヒト一番染色体250,000,000bpを読むためには250倍くらい足りないのだが、それでも進歩には違いない。</p>
+<p>ただ、エラー率に注目してもらいたい。もちろん、エラー率をどのように定義するかは問題だが、読んだ塩基のうち、1.別の塩基と間違えた 2.存在しない塩基を読んだふりをした 3.存在する塩基を読み飛ばした 割合だと思ってもらおう（本当はこうではないが、ちゃんと説明しようとするとアラインメントの説明をしないといけない）。</p>
+<p>エラー率15％というのが、どれほど間違えるかというと、『エれー率15％といのが、どれほど間えるかまという』くらい間違える。
+実際、この意味で、長鎖型のシーケンサーというのは、カウンタマシンというよりは、むしろ、信頼性のないスキャナとでも言うべきものだ。</p>
+<p>実際、同じところを何度も読むことが<strong>できれば</strong>、多数決を取ることで、読んだ回数に対して指数的にエラー確率が下がっていくので、訂正をすることができる。</p>
+<p>（問題：ある文字列に対して、そこのランダムなk-長の文字列を読めたとする。こうやって読んだ、二つのk-長の文字列同士が、同じところから出てくると、どうやったら確証できるだろうか？　l文字が異なる場所で一致する確率は、1/4^l、と言うのは間違えている。実際、Aのみからなる文字列から切り出せる、k-長の文字列は、一通りしかない。）</p>
+<h2 id="yao-kakomugigenomu">遥かコムギゲノム</h2>
+<p>では、これら2つのシーケンサーを用いて、コムギのゲノムアセンブリはできたのだろうか？</p>
+<p>答え：できていない</p>
+<p>この理由を説明するには、コムギの来歴について、少し説明する必要がある。</p>
+<p>まず、コムギは非常によく似た3つの種が、混ざり合ってできているものだという事実がある。より具体的には、コムギは(2nのとき)、</p>
+<ul>
+<li>A1A1-A7A7という7本の染色体をもった種</li>
+<li>B1B1-B7B7という7本の染色体をもった種</li>
+<li>D1D1-D7D7という7本の染色体をもった種</li>
+</ul>
+<p>が、染色体を失うことなく、新しい種を構成している。つまり、文字で書くと、</p>
+<p>A1A1 A2A2 A3A3 A4A4 A5A5 A6A6 A7A7</p>
+<p>B1B1 B2B2 B3B3 B4B4 B5B5 B6B6 B7B7</p>
+<p>D1D1 D2D2 D3D3 D4D4 D5D5 D6D6 D7D7</p>
+<p>というとんでもない数の染色体を要していて、Ad,Bd,Dd同士(d=1,...,7)、95％くらいの類似度を持つ([1])。
+考えて見て欲しいのだが、10%くらいエラーを起こす長鎖型のシークエンサーを使って、これら三種類の染色体を区別することはできるのだろうか？　それは単に、エラーに紛れ込んでしまうのではないか？</p>
+<p>（実際はそれほど悲観することではないように思われる。エラーはランダムに入るのだが、Ad,Bd,Dd間の差異は固定されている。）</p>
+<p>さらに状況を悪化させるのが、植物ゲノムは特にそうなのだが、同じ配列が非常に多いことが挙げられる([2])。
+これは転移因子という、ゲノム中で自己複製する配列のせいだ。</p>
+<p>また、より一般に、多くの真核生物は、染色体の中央にセントロメアと呼ばれる反復配列を持っていて、どのようになっているかというと、</p>
+<p>[unit] = (160字くらいの、A,T,G,Cからなる文字列)</p>
+<p>[unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit][unit]</p>
+<p>こういう感じだ(本当は数Mbpくらいある)。更に、リボソーム16Sをコードしているゲノム中の領域があり、同じようになっている。</p>
+<p>これのせいで、短鎖型のシークエンサーは非常な困難に直面する。例えば、上記の[unit]を読めたとして、それが何番目の[unit]なのかを知るのはほぼ不可能だ。実際には、目標はもう少し簡単で、繰り返し回数だけを知ればいいのだが、これも、同じ反復配列が二箇所にあった場合、困難が発生する。</p>
+<p>系：上のゲノムから、短鎖型リードで得られたアセンブリについて、それの正しさは示せない</p>
+<p>長鎖型のシーケンサーを用いて、リピート領域を跨いでスキャンすればよいと言う意見もあり、実際、それによってかなりの量のリピート領域が埋められているが、Mbpレベルのリピートを埋めることは、今だにできていない。</p>
+<p>（このようなリピート領域を、一般に『ゲノムの複雑性が ** 低い ** 領域』と言う。たまに、ゲノムが ** 複雑で難しい ** と言われるが、実際は、ゲノムが単純であればあるほど、アセンブリは困難になる。例えば、『3ギガ文字のAの中に、4つだけCがある』なるゲノムのアセンブリは、ほとんど不可能に近い。 ）</p>
+<p>更に、コムギはゲノムサイズが大きく(半数体で16Gbp)、長鎖型シークエンサーのみで、エラーを訂正するのに十分と言われているX30(同じところを30回読む)を達成するために、500Gbp近いリードが必要になる。</p>
+<p>このような理由で、完全なアセンブリと言うのは、未だにどの真核多細胞生物においても成功していない。</p>
+<p>ところで、ヘッダーの下に引用文献をつけるが、正しいかは微妙だ。Mendeleyに言って欲しい。</p>
+<h3 id="1du-menoasenburi-yi-chuan-zi-asenburi">1度めのアセンブリ：遺伝子アセンブリ</h3>
+<p>Brenchley, R., Spannagl, M., Pfeifer, M., Barker, G. L. A., D’Amore, R., Allen, A. M., … Hall, N. (2012). Analysis of the bread wheat genome using whole-genome shotgun sequencing. Nature. https://doi.org/10.1038/nature11650</p>
+<p>これは全文がタダで読める。読む価値があるかは知らない。</p>
+<p>2012年は、まだ短鎖型シーケンサーしか実用的ではなかった頃だ。アセンブリを行う際には、あるリードと、それと80bp程度完全に一致する別のリードを用いて、</p>
+<p>&lt;------&gt;
+&lt;-------&gt;
+&lt;------&gt;</p>
+<p>と言うように繋いでいく。もう少しわかりやすく言うと、</p>
+<ul>
+<li>と言うように繋</li>
+<li>うに繋いで</li>
+<li>繋いでいく。もう</li>
+<li>。もう少しわかりやすく言うと、</li>
+</ul>
+<p>と言う文字列から、『と言うように繋いでいく。もう少しわかりやすく言うと、
+』を構成するようなものだ。</p>
+<p>先に述べたように、この状態では、使うアルゴリズムにもよるが、リピート領域に入るたびに、アセンブリは途切れてしまう。結果として、非常に断片化した、平均長が数百bpのアセンブリが大量に生成される。</p>
+<p>もちろん、これは全体でも数百Mbpしかなく（本来なら、17Gbp程度出るはずだったことを思い出そう）、A1-D7のどの配列から来たのかもわからない（もしかしたら、途中まではA3で、そこからD3に切り替わっているかもしれない。ちょうど、同じ『文』が登場したことで、ある二つの文章が切り替わってしまうのと同じように）。</p>
+<p>実際、アセンブリの前段階で、リピートと思しきリードや、rDNAの反復配列あたりから来たリードを取り除く工程が入っているが、これで、全体の60%近くが失われたとSupplementary noteに書いてある。</p>
+<p>この論文では、（私見では、やや苦し紛れに）染色体A、B、Dから進化した別の種のゲノムアセンブリA',B',D'――これも不完全なのだが――を使って、『手に入った断片を、A',B',D'のどれに属しそうか見て、それを実際の帰属とみなす』と言う手段を用いている。例えば、ある断片が、B'の中やD'の中よりも、A'の中に、近い文字列があるならば、この断片は実際にAという染色体から来たと思う、という具合だ。実際は、一番染色体だけはA,B,Dの帰属がわかっているようなので、それを正解セットとして用いて、SVMを用いて機械学習をしているらしい（サプリ5.1に載っているが、やや意味不明な記述が多い。特に、使っているカーネル関数が明記されていないのだが……）。</p>
+<p>もちろん、このような手法が一般にうまくいくとは限らず、Precision、Recallともに6割程度の結果になっている。コインフリップでも33%の正答率が出せることを考えると、かなり微妙だ……。</p>
+<p>また、細胞からRNA/m-RNAを抽出して、cDNAを作成、それのシークエンシングを行なっているが、得られたリードの総数は1.6Gbpとなっている。また、各部位からRNAを取って来ているようだが、細胞種ごとの解析は行われていない。</p>
+<p>結局、この論文でできたことは</p>
+<ul>
+<li>85Gbp のデータセットから、非常に短い、ゲノムの断片を作れた（5,321,847個の断片で、全長3.8Gbp、平均長は715bp,N50=884bp）</li>
+<li>どの染色体へ帰属しているかは、かなり怪しい</li>
+<li>RNAを用いた遺伝子コード領域の推定も行われているが、データセットが小さすぎる。（遺伝子数を94,000-96,000と予測）</li>
+</ul>
+<p>N50とは、『アセンブルされた配列を、長い方からconcat していって、総長の半分に到達した時の、さっきconcat した配列の長さ』のことだ。このようなメトリックがなぜ使われているか、私は知らない。（簡単な計算から、N50 &gt; (平均長)という関係が導かれる。『数字がでかいと強い』理論では、N50の方が、平均長より強いことがわかる。）</p>
+<h3 id="2du-mu-noasenburi-ran-se-ti-gotonoasenburi">2度目のアセンブリ：染色体ごとのアセンブリ</h3>
+<p>Mayer, K. F. X., Rogers, J., Dole el, J., Pozniak, C., Eversole, K., Feuillet, C., … Praud, S. (2014). A chromosome-based draft sequence of the hexaploid bread wheat (Triticum aestivum) genome. Science, 345(6194), 1251788–1251788. https://doi.org/10.1126/science.1251788
+（これはジェネラルなアクセス権では、全文は読めない。やっぱりAAASって）</p>
+<p>さて、すぐに考えつくこととして、次のようなことがある：染色体ごとにシークエンスすればいいのではないか？</p>
+<p>実際、このアイディアは実行に移され、先ほどの論文から2年後には、B3のリファレンスゲノムが、同年には全ての染色体が読まれた。
+具体的には、フローソーティングの技術を用いて、21*2本の染色体を、相同染色体ごとに分別し（にわかには信じがたいが、そう言うことができると書いてある）、それぞれのフラクションを読み、同じプログラムでアセンブルを行なっている。シークエンシングセンターは世界7つの研究機関に分散し、それぞれillumina社のシーケンサーを用いていた。（どうしても知りたい人のために言うと、日本はB6染色体のシークエンスを行なった）</p>
+<p>アセンブリのソフトとしてはAbyssが用いられており、<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2694472/">詳しく知りたい香具師は論文のMethodを嫁</a>。いつかこれに関しては、記事を書こうと思う。</p>
+<p>データセットしては、最低X30(同じところを平均して30回読んでいる。例えば、3Gbpのゲノムなら、90Gbp読むことに相当する）の深さでシーケンシングを行なっている。A4の短い方の腕（染色体はセントロメアを中心として、長い腕と短い腕に分けられる）に至っては、X241の深さで読んでいる。
+面倒臭いので、真面目に計算をしていないが、サプリを読む限り、全体として、 900 Gbp は最低でも読んでいるように思われる。これは圧縮せずに表現すると、binaryの表現でも1.8Tbyteに対応する。</p>
+<p>また、遺伝子発現のデータも、葉、根等、五箇所から合計62Gbpシークエンスを行なっている（短鎖で）。遺伝子のコード領域の予測は、他の植物の遺伝子との相同性検索w/ 遺伝子発現データによる確証で決定している。</p>
+<p>さて、論文の結果をまとめよう。ただし、どういうわけか、ゲノム全体に対するメトリックが無い（知っている人は教えてください）。</p>
+<ul>
+<li>数Tbp のデータセットから、短い、ゲノムの断片を作れた（リピート領域を取り除いた状態で、約1400,000個の断片で、全長10.2379Gbp、N50は1000bp-3000bp程度）</li>
+<li>どの染色体へ帰属しているかは、厳密に決定できている。</li>
+<li>RNA-seqのデータから、遺伝子領域の予測をしている。遺伝子数は（遺伝子座やalternative splicing を含むかどうか、など、メトリックが多すぎて意味不明になっているが）だいたい133,090個程度。</li>
+</ul>
+<p>（蛇足だが、L50(bp)という、単位がかなり意味不明な列が表にあるが、これはきっとN50のことだろう。L50と言うのは、N50を計算するときにconcat した配列の数のことである。このメトリックが一体何の役に立つのか、私にはわからない）</p>
+<h3 id="3du-mu-noasenburi-wu-liang-zhan">3度目のアセンブリ：物量戦</h3>
+<p>Chapman, J. A., Mascher, M., Buluç, A., Barry, K., Georganas, E., Session, A., … Rokhsar, D. S. (2015). A whole-genome shotgun approach for assembling and anchoring the hexaploid bread wheat genome. Genome Biology. https://doi.org/10.1186/s13059-015-0582-8
+これはタダで読める。</p>
+<p>今回は、前回のような、染色体ごとのシーケンスではなく、全ゲノムを読んで、アセンブルをすることにしている。
+キーポイントは、コムギの異なる株をかけ合わせたものを大量に読むことで、遺伝地図（組み換え価を距離と見たときの地図）を作り、それを用いて、アセンブルした配列を
+染色体として並べる技術らしいのだが、私の遺伝学の知識が薄く、何を言っているのかよくわからない。
+もし、識者の方がいらっしゃれば、参考文献を教えていただけると嬉しいです。</p>
+<p>簡単にメトリックをまとめておく。</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h3 id="4du-mu-noasenburi-chang-suo-sikuensa">4度目のアセンブリ：長鎖シークエンサー</h3>
+<h3 id="5du-mu-noasenburi-chang-suo-sikuensav2">5度目のアセンブリ：長鎖シークエンサーv2</h3>
+<p>（何回アセンブリするんだよ、と言う気分になるが、これはバイオインフォの戦いでもある）</p>
+<h3 id="6du-mu-noasenburi-denovomagic2">6度目のアセンブリ：deNovoMagic2</h3>
+<h2 id="gan-xiang">感想</h2>
+<h3 id="ji-mican-si">積み残し</h3>
+<p>アセンブリのアルゴリズムについて、全く紙幅が避けなかった。実際、ゲノムアセンブリを、『与えられたリードを、全て、部分文字列として含む文字列を作るアルゴリズム』と言うのはあまりにも馬鹿げている（単にリードを全て concat すればいいだけ！）。</p>
+<p>ただ、短鎖型のリードを使ったアセンブリには、いくつかグラフ理論の道具を使わないといけないし、長鎖型アセンブリにおいては、現状、必須になっている、アラインメントや現代的なヒューリスティックについて説明する必要があり、これは2、3回に分けて説明するべき問題だ。</p>
+<p>また、純粋に生物学的な解説ができなかったのが悔やまれる。例えば、A,B,Dという3つのよく似た染色体は、どのような進化を辿っているのだろうか？　何らかの意味で、ゲノムの中で『強い』ものがあったりするのだろうか？</p>
+<h3 id="asenburinituite">アセンブリについて</h3>
+<p>個人的な考えでは、アセンブリとはある種の点推定で、それは与えられたリードと、推定されるゲノムの性質を、うまく説明するような文字列を推定することにほかならない。</p>
+<p>当然、この流れを汲んで、ある種の分布としてゲノムを捉え直す、グラフゲノムという主張もあるようだが、うまく行っているかは知らない。</p>
+<p>これと関連して、アセンブリについて、『Super string problemなのでNP困難』という主張があるが、これはかなり微妙なところがある。多くの場合、Super string problemは、解きたい問題ではない。</p>
+<h3 id="genomunituite">ゲノムについて</h3>
+<p>私見では、アセンブリされたゲノムは、ある種を記述するだけでなく、『座標系』としても機能していると考えている。例えば、ヒトゲノム中のある遺伝子の疾患を示したいときに、『これこれという名前のタンパク質をコードしている部分で』や、『ここの遺伝子の近くの非コード領域で』などというより、『このアセンブリで言うと、ここ』と言ったほうが、簡便だ。</p>
+<p>何が言いたいかというと、ゲノムを使うときには、ゲノムそのものに興味がある場合と、ゲノムを単なる記述のためのツールとして使う場合があり、この2つは、現在、混同して用いられているようだ。</p>
+<h3 id="zhu-zhang">主張</h3>
+<p>どうでもいいが、バイオインフォマティクスの発展、優秀な学生の流入を亢進させるために、もっとこのようなエントリを ** 日本語で ** 書いていくべきだと僕は感じている。</p>
+<p>バイオインフォマティクスの人口を増やすためには、今の頭のいい高校生に、たくさんバイオインフォマティクスのことを認知してもらうことが寛容と思われる。
+更に、日本にそのような研究をしている場所があることを知ってもらうことも必要だ。
+もちろん、本邦の現状の英語教育では、才能や学力のある若者全員が、英語の記事を抵抗なく読めるようにはできていないので、日本語によって書くことが求められていると思う。</p>
+<p>確かに、僕の周辺では、『結局、研究をするときは英語で読み書きするんだから、日本語でやっても無駄』という意見が時折聞かれる。
+しかし、これは書くことの目的を取り違えている。僕は、業界の中のためにのみならず、布教のために書いているのだから。</p>
+
+</div>
+
+    </div>
+
+  </body>
+
+</html>

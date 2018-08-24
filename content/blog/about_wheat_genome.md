@@ -1,8 +1,8 @@
-﻿+++
++++
 title = "コムギゲノム雑感"
 date = 2018-08-23
 draft = false
-tags = [ "genomics", "wheat", "sequencing", "genome assembly" ]
+# tags = [ "genomics", "wheat", "sequencing", "genome assembly" ]
 # category = "diary"
 order = 0
 weight = 0
@@ -272,18 +272,29 @@ Mayer, K. F. X., Rogers, J., Dole el, J., Pozniak, C., Eversole, K., Feuillet, C
 - RNA-seqのデータから、遺伝子領域の予測をしている。遺伝子数は（遺伝子座やalternative splicing を含むかどうか、など、メトリックが多すぎて意味不明になっているが）だいたい133,090個程度。
 
 
-（蛇足だが、L50(bp)という、かなり意味不明な列が表があるが、これはきっとN50のことだろう。L50と言うのは、N50を計算するときにconcat した配列の数のことである。このメトリックが一体何の役に立つのか、私にはわからない）
+（蛇足だが、L50(bp)という、単位がかなり意味不明な列が表にあるが、これはきっとN50のことだろう。L50と言うのは、N50を計算するときにconcat した配列の数のことである。このメトリックが一体何の役に立つのか、私にはわからない）
 
 
 ### 3度目のアセンブリ：物量戦
 Chapman, J. A., Mascher, M., Buluç, A., Barry, K., Georganas, E., Session, A., … Rokhsar, D. S. (2015). A whole-genome shotgun approach for assembling and anchoring the hexaploid bread wheat genome. Genome Biology. https://doi.org/10.1186/s13059-015-0582-8
 これはタダで読める。
 
-今回は、前回のような、染色体ごとのシーケンスではなく、全ゲノムを読んで、アセンブルをすることにしている。キーポイントは、単一のゲノムを読むのではなく、集団や、他の植物との
+今回は、前回のような、染色体ごとのシーケンスではなく、全ゲノムを読んで、アセンブルをすることにしている。
+キーポイントは、コムギの異なる株をかけ合わせたものを大量に読むことで、遺伝地図（組み換え価を距離と見たときの地図）を作り、それを用いて、アセンブルした配列を
+染色体として並べる技術らしいのだが、私の遺伝学の知識が薄く、何を言っているのかよくわからない。
+もし、識者の方がいらっしゃれば、参考文献を教えていただけると嬉しいです。
+
+簡単にメトリックをまとめておく。
+
+-
+-
+-
 
 
 
 ### 4度目のアセンブリ：長鎖シークエンサー
+
+
 
 
 
