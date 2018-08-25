@@ -24,6 +24,8 @@ template = "page.html"
 
 例えば、コムギは21本*2の染色体を持つが、今回発表されたのは138,665本の配列だ。ゲノムサイズは15.76Gbpだが、上記の138,665本を全て繋いでも、14.5Gbpにしかならない。
 
+ちなみに、植物モデル生物シロイヌナズナは、約140Mbpくらいで、染色体は5本、配列は100本である。
+
 
 今日は、『ゲノムの文字を正しく並べる』（ゲノムアセンブリを行う、という）ことが何を指しているのか、これまで何がされてきたのか、どんな技術があるか、といった周辺知識を書いておくことで、140字には載り切らなかったであろう情報を補填しておきたい。
 
@@ -61,7 +63,7 @@ template = "page.html"
 
 > The genome assembly is simply the genome sequence produced after chromosomes have been fragmented, those fragments have been sequenced, and the resulting sequences have been put back together.
 
-（ゲノムアセンブリとは、単に染色体をバラバラにほぐして、その断片を読んで、読んだものを元通りに合わせることである）
+（ゲノムアセンブリとは、染色体をバラバラにほぐして、その断片を読んで、読んだものを元通りに合わせることで作られた、単なるゲノム配列のことである）
 
 または、
 
