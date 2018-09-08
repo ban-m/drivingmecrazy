@@ -57,6 +57,7 @@
       {% block content %}
       <div class="posts">
         {% for page in section.pages %}
+        {% if page.draft is false %}
         <div class="post">
           <h1 class="post-title">
             <a href="{{ page.permalink }}">
@@ -73,6 +74,7 @@
             <a href = "{{ page.permalink}}">もっと読む</a>
           </div>
         </div>
+        {% endif %}
         {% endfor %}
       </div>
       {% endblock content %}
