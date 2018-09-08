@@ -1,6 +1,6 @@
 +++
 title = "コムギゲノム雑感"
-date = 2018-08-23
+date = 2017-08-23
 draft = false
 # tags = [ "genomics", "wheat", "sequencing", "genome assembly" ]
 # category = "diary"
