@@ -38,13 +38,13 @@ template = "page.html"
 
 まず、全ゲノムシークエンシングにおいては、まず、抽出したゲノムDNAを断片化して、両端の150 bp を読むことになる。下手くそな図で書くと、次のようになる。
 
-()[]//画像。
+![wgs](./wgs.PNG)
+
 
 実際は、対象のゲノムに対して、x30、つまり、全ゲノムを平均して30回読めるだけのショートリード（『読んだ』塩基のことをこのように表現する）が手に入るので、
 次のような、ややカオティックな状況になる。
 
-
-()[]
+!(pileup)[./pileup.PNG]
 
 このようなデータセットから、どのようにして元のゲノムを復元できるだろうか？
 一見、この問題は非常に簡単に見える。実際、上の画像を見ると、単に、対応する領域にリードを貼り付けていって、被っているところを圧縮すればいいだけに思える。
@@ -63,8 +63,7 @@ template = "page.html"
 
 である。画像にすると、次のような手続きを踏むことになる。
 
-
-()[]
+!(olc)[olc.PNG]
 
 この種のアルゴリズムを、業界ではOLCと言うが、（実際はOLC-LC-LCと、何度かLayoutとConsensusをしている気がする）こんな名前はどうでもいい。
 
@@ -80,6 +79,7 @@ template = "page.html"
 となる。
 この処理によって、我々は、次のようなグラフを手にしている。
 
+!(stringgraph)[./string_graph.PNG]
 
 このとき、解くべき問題はなんだろうか？　
 このグラフからLayoutを作れ、と言うのは、次のような問題として書き直せる：**このグラフのノードを全て、ただ一度だけ通るパスを求めよ**。
@@ -126,7 +126,7 @@ $$
 
 要するに、最後の１文字を削って、新しく１文字足した文字列間には辺を引くと言うデータ構造を考える。例としては次の画像を参考のこと。
 
-[]()
+![de_brujin](./de_brujin.PNG)
 
 これは、かなり遠回りなアプローチだ。第一、なぜ、わざわざリードを短くするのだろうか？
 
@@ -161,7 +161,7 @@ $$
 現実のアセンブリでは、そんなにうまい話はない。
 事実、オイラー閉路と、実際のゲノムは、やや関係はあるものの、ぴったり同じと言うわけではない。何より、オイラー閉路は何通りもあるのだ。
 
-()[] 何通りもあるオイラー閉路
+!(multiple_eular)[multiple_eular.PNG]
 
 現状、これらのオイラー閉路のどちらかを選ぶことはできない。一方で、ゲノムは物理的実態として一つしかないので、当然……。
 
@@ -171,6 +171,7 @@ $$
 
 と並んでいるとしよう（それぞれ1000塩基くらいだとする。-あたりは、なんでもいい）。このとき、de Brujin Graphは次のようになる。
 
+![repat](repeat.PNG)
 
 さて、ここからオイラー閉路を作ろうと思うと、A->Rと突入してしまうと、R->Dと出ればいいのか、R->Bと出ればいいのか分からなくなるという、
 やや最悪な状況が発生する。これは、このままでは本質的に解けない問題で、一般に、ゲノム中に2回以上繰り返し出てくる、
@@ -191,6 +192,8 @@ k長以上の文字列のことを、リピートという。
 
 という領域があった場合である。このとき、de Brujin Graph は
 
+
+![tandemrepeat](tandemrepeat.PNG)
 
 と言うような様相を呈する。すでにわかっていると思うが、この状況においては、**そもそもオイラー閉路を求めることが問題ではない**。
 要するに、Rが何回連続しているかを推定し、その回数だけ、ループになっている領域を通ることを許すように緩和させる必要がある。
@@ -241,5 +244,11 @@ H2,H3といったタグを生成するのは、もはや犯罪と言っていい
 私が個人的に勉強中の集団遺伝学の話でもしようと思う。
 
 ## 参考文献
+
+- Port, E., Sun, F., Martin, D., & Waterman, M. S. (1995). Genomic mapping by end-characterized random clones: a mathematical analysis. Genomics, 26(1), 84–100. https://doi.org/10.1016/0888-7543(95)80086-2 (おそらくはじめにde Brujin Graphと同様の考えを持ち込んだ論文)
+- Pevzner, P. A., & Tang, H. (2001). Fragment assembly with double-barreled data. Bioinformatics. https://doi.org/10.1093/bioinformatics/17.suppl_1.S225（オイラー閉路として解く＋リピート解決を持ち込んだ論文）
+- Pevzner, P. A., Tang, H., & Waterman, M. S. (2001). An Eulerian path approach to DNA fragment assembly. Proceedings of the National Academy of Sciences. https://doi.org/10.1073/pnas.171285098（上記のサラミ）
+- Simpson, J. T., Wong, K., Jackman, S. D., Simpson, J. T., Durbin, R., Salzberg, S. L., … Jones, S. J. M. (2012). ABySS : A parallel assembler for short read sequence data structures ABySS : A parallel assembler for short read sequence data, 1117–1123. https://doi.org/10.1101/gr.089532.108
+- Bankevich, A., Nurk, S., Antipov, D., Gurevich, A. A., Dvorkin, M., Kulikov, A. S., … Pevzner, P. A. (2012). SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing. Journal of Computational Biology, 19(5), 455–477. https://doi.org/10.1089/cmb.2012.0021（これら2つが割と有名か。他にもVelvet等があるが、流石に紹介しきれない。他のアイディアもたくさん出ているが、ソフトウェアになるまでには行っていない。）
 
 

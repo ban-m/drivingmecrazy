@@ -6,7 +6,24 @@
         <generator>Gutenberg</generator>
         <language>ja</language>
         <atom:link href="https://drivingmecrazy.netlify.com/rss.xml/" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Thu, 23 Aug 2018 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>de Brujin Graphについてメモ</title>
+                <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+                <link>https://drivingmecrazy.netlify.com/blog/about-de-brujin-graph/</link>
+                <guid>https://drivingmecrazy.netlify.com/blog/about-de-brujin-graph/</guid>
+                <description>&lt;h2 id=&quot;shu-kukoto&quot;&gt;書くこと&lt;&#x2F;h2&gt;
+&lt;p&gt;さてみなさん、我々は今や、&lt;a href=&quot;https:&#x2F;&#x2F;www.ncbi.nlm.nih.gov&#x2F;projects&#x2F;genome&#x2F;guide&#x2F;human&#x2F;&quot;&gt;ヒトのゲノムをダウンロードできる&lt;&#x2F;a&gt;時代に生きていますが、
+このゲノムとやらが、どのように作られて来たかは、かまぼこがどのように作られているか程度にしか知られていない、と思われる。
+本日は、みなさんに、バイオインフォマティクスの一分野である、ゲノムアセンブリにおいてよく用いられている、de Brujin Graph（ド・ブロイグラフと日本語で発音する人がいるが、多くの外国語がそうであるように、これもまたオランダ語を流暢に話す人々のみに話せる単語らしい）と言うものについて解説します&lt;&#x2F;p&gt;
+&lt;p&gt;もう少し簡単に言うと、こうなるります。&lt;strong&gt;あなたはある本Bを持っています。100冊のBをシュレッダーにかけてしまいました。シュレッダーから出てきた断片から、元の本を再構成するには、どうしたらよいでしょう？&lt;&#x2F;strong&gt; どのようなアルゴリズムを考えつくだろうか？　それはどのくらいきちんと動くだろうか？&lt;&#x2F;p&gt;
+&lt;p&gt;または、次のような問いかけでもよい：あなたはピカソの絵を大量にコピーし、それをバラバラに切り刻みました。どのように元のピカソの絵を復元できるだろうか？&lt;&#x2F;p&gt;
+&lt;p&gt;かなりインフォーマルに書くが、記法と正確性には気をつけようと思っている。&lt;&#x2F;p&gt;
+&lt;p&gt;また、文末に参考文献をつけておくので、興味がある人は、自分でサーベイや実装をしてみてほしい。&lt;&#x2F;p&gt;
+&lt;p&gt;もちろん、誤植や誤記、私が間違えている場所はありうるので、見つけ次第、Twitterかメールで報告していただけると、嬉しいです。&lt;&#x2F;p&gt;
+</description>
+            </item>
         
             <item>
                 <title>About</title>
@@ -38,7 +55,7 @@
         
             <item>
                 <title>コムギゲノム雑感</title>
-                <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 23 Aug 2017 00:00:00 +0000</pubDate>
                 <link>https://drivingmecrazy.netlify.com/blog/about-wheat-genome/</link>
                 <guid>https://drivingmecrazy.netlify.com/blog/about-wheat-genome/</guid>
                 <description>&lt;h2 id=&quot;shu-kukoto&quot;&gt;書くこと&lt;&#x2F;h2&gt;
