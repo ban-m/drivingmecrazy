@@ -57,7 +57,7 @@
       {% block content %}
       <div class="posts">
         {% for page in section.pages %}
-        {% if page.draft is false %}
+        {% if not page.draft %}
         <div class="post">
           <h1 class="post-title">
             <a href="{{ page.permalink }}">
@@ -69,17 +69,15 @@
 	    {{ page.summary | safe }}
 	  </div>
 	  {% endif %}
-          <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
           <div class="read-more">
             <a href = "{{ page.permalink}}">もっと読む</a>
           </div>
+          <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
         </div>
         {% endif %}
         {% endfor %}
       </div>
       {% endblock content %}
     </div>
-
   </body>
-
 </html>
