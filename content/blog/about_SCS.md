@@ -48,7 +48,7 @@ Gallant, J., Maier, D. and Astorer, J., 1980. On finding minimal length superstr
 
 <!-- more -->
 
-\begin{definition}[Shortest Common Superstring Problem]
+\\begin{definition}[Shortest Common Superstring Problem]
 あるアルファベット$\Sigma$と、その上の文字列の集合$S=\{s_1,s_2,\cdots,s_n\}$が与えられたときに、$S$のShortest Common Superstringとは、
 $S$内の全ての文字列を部分文字列として含むような、$\Sigma$上の文字列のうち、最短のものと定義する。
 どのような$S$に対しても、自明にShortest Common Superstringはある。
@@ -58,7 +58,7 @@ Shortest Common Superstring Problem(SCS)とは、次のような決定問題で�
 INSTANCE:アルファベット$\Sigma$、$\Sigma$上の文字列の集合$S$、自然数$K$。
 
 QUESTION:$S$に対する長さ$K$のShortest Common Superstringは存在するか。
-\end{definition}
+\\end{definition}
 
 \begin{remark}
 まず、この問題がNPであることは明らか。実際、ある文字列が$S$の要素全てを含むかは、$S$の要素を一つずつチェックすれば多項式時間で済むので、
@@ -304,4 +304,3 @@ $A_v$内の要素は、$A_v$の要素以外とは、最長でも1以下の重複
 この時、$K$の値はどのように変換されるのか、また、変換前と変換後で、Yesに属するかどうかが一致するのかは、練習問題とする。
 
 以上で、ゲノムアセンブリの計算量的な困難性は示すことができた。
-\end{document}
