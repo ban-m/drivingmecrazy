@@ -1,7 +1,7 @@
 +++
 title = "最短共通包含文字列問題Shortest Common Superstring Problemについて"
 date = 2018-09-28
-draft = true
+draft = false
 tags = []
 # category = "diary"
 order = 0
