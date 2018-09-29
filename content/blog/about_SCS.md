@@ -49,7 +49,7 @@ Gallant, J., Maier, D. and Astorer, J., 1980. On finding minimal length superstr
 <!-- more -->
 
 #### definition-Shortest Common Superstring Problem
-あるアルファベット\(\Sigma\)と、その上の文字列の集合$S=\{s_1,s_2,\cdots,s_n\}$が与えられたときに、$S$のShortest Common Superstringとは、
+あるアルファベット\( \Sigma \)と、その上の文字列の集合$S=\{s_1,s_2,\cdots,s_n\}$が与えられたときに、$S$のShortest Common Superstringとは、
 $S$内の全ての文字列を部分文字列として含むような、$\Sigma$上の文字列のうち、最短のものと定義する。
 どのような$S$に対しても、自明にShortest Common Superstringはある。
 
