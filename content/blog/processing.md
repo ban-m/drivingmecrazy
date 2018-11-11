@@ -9,9 +9,6 @@ weight = 0
 aliases = []
 template = "page.html"
 [extra]
-
-よくやるやつ
-
 +++
 
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>

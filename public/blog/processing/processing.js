@@ -3,7 +3,7 @@ const width = 1000;
 const height = 500;
 const max_speed = 4;
 const inc = 0.01;
-const datasize = 100;
+const datasize = 500;
 const magnitude = 5;
 
 function Point(sketch){
@@ -70,7 +70,6 @@ const s = (sketch) => {
     let max = -1;
     let min = 1;
     let scaleRadian ;
-    let forceField ;
     sketch.setup = () =>{
 	sketch.createCanvas(width,height);
 	sketch.noiseSeed(90);
@@ -85,16 +84,6 @@ const s = (sketch) => {
     };
     
     sketch.draw = () =>{
-	// sketch.background(255);
-	// for (let x = 0; x < width ; x +=10){
-	//     for (let y = 0; y < height ; y += 10){
-	// 	const radian = scaleRadian(sketch.noise(x*inc,y*inc,z*inc));
-	// 	let direction =p5.Vector.fromAngle(radian);
-	// 	direction.mult(5);
-	// 	sketch.strokeWeight(1);
-	// 	sketch.line(x,y,x+direction.x,y+direction.y);
-	//     }
-	// }
 	z += 1;
 	for (let point of points) {
 	    point.tick(sketch,z,scaleRadian);

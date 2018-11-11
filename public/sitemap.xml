@@ -28,6 +28,13 @@
             
         </url>
     
+        <url>
+            <loc>http://127.0.0.1:9990/blog/processing/</loc>
+            
+                <lastmod>2018-11-11</lastmod>
+            
+        </url>
+    
     
         <url>
             <loc>http://127.0.0.1:9990/</loc>

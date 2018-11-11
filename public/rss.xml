@@ -6,7 +6,18 @@
         <generator>Gutenberg</generator>
         <language>ja</language>
         <atom:link href="http://127.0.0.1:9990/rss.xml/" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Fri, 28 Sep 2018 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 11 Nov 2018 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Processing Practice</title>
+                <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
+                <link>http://127.0.0.1:9990/blog/processing/</link>
+                <guid>http://127.0.0.1:9990/blog/processing/</guid>
+                <description>&lt;script src = &quot;https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;p5.js&#x2F;0.7.2&#x2F;p5.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;div id = &quot;canvas&quot;&gt;&lt;&#x2F;div&gt;
+&lt;script src = &quot;.&#x2F;processing.js&quot;&gt;&lt;&#x2F;script&gt;
+</description>
+            </item>
         
             <item>
                 <title>最短共通包含文字列問題について</title>
