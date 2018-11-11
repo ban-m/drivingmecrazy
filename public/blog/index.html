@@ -11,14 +11,14 @@
     <title>どうにかなりそう</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;print.css" media="print">
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;poole.css">
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;hyde.css">
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;override.css">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;print.css" media="print">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;poole.css">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;hyde.css">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;override.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
     
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;rss.xml">
     
 
     
@@ -31,7 +31,7 @@
       <div class="container sidebar-sticky">
         <div class="sidebar-about">
           
-          <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com"><h1>どうにかなりそう</h1></a>
+          <a href="http:&#x2F;&#x2F;127.0.0.1:9990"><h1>どうにかなりそう</h1></a>
           
           <p class="lead">ゲノム生物学&#x2F;計算生物学等の論文についてのメモや、他の覚書等</p>
           
@@ -60,11 +60,67 @@
       <div class="posts">
         
         
+        <div class="post">
+          <h1 class="post-title">
+            <a href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;processing&#x2F;">
+              Processing Practice
+            </a>
+          </h1>
+	  
+          <div class="read-more">
+            <a href = "http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;processing&#x2F;">もっと読む</a>
+          </div>
+          <span class="post-date">2018-11-11</span>
+        </div>
+        
         
         
         <div class="post">
           <h1 class="post-title">
-            <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-de-brujin-graph&#x2F;">
+            <a href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;about-scs&#x2F;">
+              最短共通包含文字列問題について
+            </a>
+          </h1>
+	  
+	  <div class="post-summary">
+	    <h2 id="jin-ri-shu-kukoto">今日書くこと</h2>
+<p>今日は最短共通包含文字列問題(Shortest Common Superstring Problem)という問題がNP完全であることを示す。</p>
+<p>なんで突然こんな話を始めたかと言うと、これはゲノムアセンブリに関わっているからで（最近、ゲノムアセンブリについて
+ずっと書いているが、僕は別にゲノムをアセンブルするような趣味も研究もしていない）、具体的には、次のようになる。</p>
+<p>ゲノムアセンブリ（短いDNA断片から、元のゲノムを復元する）は、要するに、DNA断片の集合から、それらを
+うまく『説明』するような配列を生成しろ、という問題だと思うことが出来る。</p>
+<p>この『説明』というのが難しく、一体何を持って説明とするかは議論の分かれるところである。</p>
+<p>例えば、<em>すべてのDNA断片を部分文字列として含む</em>というのを、『説明する』ことだとすると――確かに、
+この定義は、DNA断片が虚空からではなく、ゲノムから読まれていると言うことは保証してくれるが――
+色々と問題がある。</p>
+<p>というのも、この定義に則って言えば、得られたDNA断片をすべて連接（つなげて）出力したものも、
+DNA断片を『説明する』事になってしまうからだ。
+もちろん、ゲノムを何十回・何百回を読んだ結果としてDNA断片たちが得られていると考えると、
+このアセンブリは長すぎる。</p>
+<p>この『長過ぎる』ということを逆手に取って、では、次のように定義してみてはどうだろうか。</p>
+<blockquote>
+<p>『説明する』とは、すべてのDNA断片を部分文字列として含むような文字列のうち、かなり短いものである</p>
+</blockquote>
+<p>もちろん、問題を<em>かなり</em>の部分に押し付けているだけなのだが、これを<em>最も短い</em>としたものが、
+まさにShortest common superstring problemという問題である。</p>
+<p>今日は、この問題の厳密な定義から始めて、これが難しいことを示す。
+論文としては、</p>
+<p>Gallant, J., Maier, D. and Astorer, J., 1980. On finding minimal length superstrings. Journal of Computer and System Sciences, 20(1), pp.50-58.(https://doi.org/10.1016/0022-0000(80)90004-5)</p>
+<p>をほぼ完コピします。</p>
+
+	  </div>
+	  
+          <div class="read-more">
+            <a href = "http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;about-scs&#x2F;">もっと読む</a>
+          </div>
+          <span class="post-date">2018-09-28</span>
+        </div>
+        
+        
+        
+        <div class="post">
+          <h1 class="post-title">
+            <a href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;about-de-brujin-graph&#x2F;">
               de Brujin Graphについてメモ
             </a>
           </h1>
@@ -83,7 +139,7 @@
 	  </div>
 	  
           <div class="read-more">
-            <a href = "https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-de-brujin-graph&#x2F;">もっと読む</a>
+            <a href = "http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;about-de-brujin-graph&#x2F;">もっと読む</a>
           </div>
           <span class="post-date">2018-09-01</span>
         </div>
@@ -94,7 +150,7 @@
         
         <div class="post">
           <h1 class="post-title">
-            <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-wheat-genome&#x2F;">
+            <a href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;about-wheat-genome&#x2F;">
               コムギゲノム雑感
             </a>
           </h1>
@@ -114,7 +170,7 @@
 	  </div>
 	  
           <div class="read-more">
-            <a href = "https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-wheat-genome&#x2F;">もっと読む</a>
+            <a href = "http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;blog&#x2F;about-wheat-genome&#x2F;">もっと読む</a>
           </div>
           <span class="post-date">2017-08-23</span>
         </div>
@@ -123,5 +179,5 @@
       </div>
       
     </div>
-  </body>
+  <script src="/livereload.js?port=1024&mindelay=10"></script></body>
 </html>

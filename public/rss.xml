@@ -1,18 +1,50 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>どうにかなりそう</title>
-        <link>https://drivingmecrazy.netlify.com</link>
+        <link>http://127.0.0.1:9990</link>
         <description>ゲノム生物学&#x2F;計算生物学等の論文についてのメモや、他の覚書等</description>
         <generator>Gutenberg</generator>
         <language>ja</language>
-        <atom:link href="https://drivingmecrazy.netlify.com/rss.xml/" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
+        <atom:link href="http://127.0.0.1:9990/rss.xml/" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Fri, 28 Sep 2018 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>最短共通包含文字列問題について</title>
+                <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
+                <link>http://127.0.0.1:9990/blog/about-scs/</link>
+                <guid>http://127.0.0.1:9990/blog/about-scs/</guid>
+                <description>&lt;h2 id=&quot;jin-ri-shu-kukoto&quot;&gt;今日書くこと&lt;&#x2F;h2&gt;
+&lt;p&gt;今日は最短共通包含文字列問題(Shortest Common Superstring Problem)という問題がNP完全であることを示す。&lt;&#x2F;p&gt;
+&lt;p&gt;なんで突然こんな話を始めたかと言うと、これはゲノムアセンブリに関わっているからで（最近、ゲノムアセンブリについて
+ずっと書いているが、僕は別にゲノムをアセンブルするような趣味も研究もしていない）、具体的には、次のようになる。&lt;&#x2F;p&gt;
+&lt;p&gt;ゲノムアセンブリ（短いDNA断片から、元のゲノムを復元する）は、要するに、DNA断片の集合から、それらを
+うまく『説明』するような配列を生成しろ、という問題だと思うことが出来る。&lt;&#x2F;p&gt;
+&lt;p&gt;この『説明』というのが難しく、一体何を持って説明とするかは議論の分かれるところである。&lt;&#x2F;p&gt;
+&lt;p&gt;例えば、&lt;em&gt;すべてのDNA断片を部分文字列として含む&lt;&#x2F;em&gt;というのを、『説明する』ことだとすると――確かに、
+この定義は、DNA断片が虚空からではなく、ゲノムから読まれていると言うことは保証してくれるが――
+色々と問題がある。&lt;&#x2F;p&gt;
+&lt;p&gt;というのも、この定義に則って言えば、得られたDNA断片をすべて連接（つなげて）出力したものも、
+DNA断片を『説明する』事になってしまうからだ。
+もちろん、ゲノムを何十回・何百回を読んだ結果としてDNA断片たちが得られていると考えると、
+このアセンブリは長すぎる。&lt;&#x2F;p&gt;
+&lt;p&gt;この『長過ぎる』ということを逆手に取って、では、次のように定義してみてはどうだろうか。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『説明する』とは、すべてのDNA断片を部分文字列として含むような文字列のうち、かなり短いものである&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;もちろん、問題を&lt;em&gt;かなり&lt;&#x2F;em&gt;の部分に押し付けているだけなのだが、これを&lt;em&gt;最も短い&lt;&#x2F;em&gt;としたものが、
+まさにShortest common superstring problemという問題である。&lt;&#x2F;p&gt;
+&lt;p&gt;今日は、この問題の厳密な定義から始めて、これが難しいことを示す。
+論文としては、&lt;&#x2F;p&gt;
+&lt;p&gt;Gallant, J., Maier, D. and Astorer, J., 1980. On finding minimal length superstrings. Journal of Computer and System Sciences, 20(1), pp.50-58.(https:&#x2F;&#x2F;doi.org&#x2F;10.1016&#x2F;0022-0000(80)90004-5)&lt;&#x2F;p&gt;
+&lt;p&gt;をほぼ完コピします。&lt;&#x2F;p&gt;
+</description>
+            </item>
         
             <item>
                 <title>de Brujin Graphについてメモ</title>
                 <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-                <link>https://drivingmecrazy.netlify.com/blog/about-de-brujin-graph/</link>
-                <guid>https://drivingmecrazy.netlify.com/blog/about-de-brujin-graph/</guid>
+                <link>http://127.0.0.1:9990/blog/about-de-brujin-graph/</link>
+                <guid>http://127.0.0.1:9990/blog/about-de-brujin-graph/</guid>
                 <description>&lt;h2 id=&quot;shu-kukoto&quot;&gt;書くこと&lt;&#x2F;h2&gt;
 &lt;p&gt;さてみなさん、我々は今や、&lt;a href=&quot;https:&#x2F;&#x2F;www.ncbi.nlm.nih.gov&#x2F;projects&#x2F;genome&#x2F;guide&#x2F;human&#x2F;&quot;&gt;ヒトのゲノムをダウンロードできる&lt;&#x2F;a&gt;時代に生きていますが、
 このゲノムとやらが、どのように作られて来たかは、かまぼこがどのように作られているか程度にしか知られていない、と思われる。
@@ -28,8 +60,8 @@
             <item>
                 <title>About</title>
                 <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
-                <link>https://drivingmecrazy.netlify.com/./about_me/</link>
-                <guid>https://drivingmecrazy.netlify.com/./about_me/</guid>
+                <link>http://127.0.0.1:9990/./about_me/</link>
+                <guid>http://127.0.0.1:9990/./about_me/</guid>
                 <description>&lt;h2 id=&quot;he-woshu-iteiruka&quot;&gt;何を書いているか&lt;&#x2F;h2&gt;
 &lt;p&gt;ゲノム生物学や、計算生物学の論文についてのメモ・解説や、
 個人的に勉強していることや、主張などを書いています。&lt;&#x2F;p&gt;
@@ -56,8 +88,8 @@
             <item>
                 <title>コムギゲノム雑感</title>
                 <pubDate>Wed, 23 Aug 2017 00:00:00 +0000</pubDate>
-                <link>https://drivingmecrazy.netlify.com/blog/about-wheat-genome/</link>
-                <guid>https://drivingmecrazy.netlify.com/blog/about-wheat-genome/</guid>
+                <link>http://127.0.0.1:9990/blog/about-wheat-genome/</link>
+                <guid>http://127.0.0.1:9990/blog/about-wheat-genome/</guid>
                 <description>&lt;h2 id=&quot;shu-kukoto&quot;&gt;書くこと&lt;&#x2F;h2&gt;
 &lt;p&gt;先日、Scienceでコムギのゲノムに関する研究が出版されたのだが、次のような速報で取り沙汰されていた。&lt;&#x2F;p&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;コムギのゲノム、完全解読に初めて成功 &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;vYzyXelSPa&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;vYzyXelSPa&lt;&#x2F;a&gt; 異質6倍体であるコムギのゲノムを解読。転写解析も。Science原著↓ &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;rE2FCQ8qfN&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;rE2FCQ8qfN&lt;&#x2F;a&gt;   &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;OiZjFtA6vw&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;OiZjFtA6vw&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;&amp;mdash; 俺のソース (論文紹介) (@OrenoSource) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;OrenoSource&#x2F;status&#x2F;1030290485535887361?ref_src=twsrc%5Etfw&quot;&gt;August 17, 2018&lt;&#x2F;a&gt;&lt;&#x2F;blockquote&gt;

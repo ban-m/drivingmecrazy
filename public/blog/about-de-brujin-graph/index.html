@@ -11,14 +11,14 @@
     <title>どうにかなりそう</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;print.css" media="print">
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;poole.css">
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;hyde.css">
-    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;override.css">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;print.css" media="print">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;poole.css">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;hyde.css">
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;override.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
     
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http:&#x2F;&#x2F;127.0.0.1:9990&#x2F;rss.xml">
     
 
     
@@ -32,7 +32,7 @@
       <div class="container sidebar-sticky">
         <div class="sidebar-about">
           
-          <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com"><h1>どうにかなりそう</h1></a>
+          <a href="http:&#x2F;&#x2F;127.0.0.1:9990"><h1>どうにかなりそう</h1></a>
           
           <p class="lead">ゲノム生物学&#x2F;計算生物学等の論文についてのメモや、他の覚書等</p>
           
@@ -172,7 +172,7 @@ $$</p>
 <p>これが実際に起こるケースとして、次のような状況を考えてみよう。ある配列A,B,C,D,Rがあり、</p>
 <p>----ARB----CRD---</p>
 <p>と並んでいるとしよう（それぞれ1000塩基くらいだとする。-あたりは、なんでもいい）。このとき、de Brujin Graphは次のようになる。</p>
-<p><img src="https://drivingmecrazy.netlify.com/blog/about-de-brujin-graph/repeat.PNG" alt="repat" /></p>
+<p><img src="http://127.0.0.1:9990/blog/about-de-brujin-graph/repeat.PNG" alt="repat" /></p>
 <p>さて、ここからオイラー閉路を作ろうと思うと、A-&gt;Rと突入してしまうと、R-&gt;Dと出ればいいのか、R-&gt;Bと出ればいいのか分からなくなるという、
 やや最悪な状況が発生する。これは、このままでは本質的に解けない問題で、一般に、ゲノム中に2回以上繰り返し出てくる、
 k長以上の文字列のことを、リピートという。</p>
@@ -185,7 +185,7 @@ k長以上の文字列のことを、リピートという。</p>
 <p>また、さらに状況を悪くするのが、次のような</p>
 <p>---RRRRRRRR.....RRRRR-----</p>
 <p>という領域があった場合である。このとき、de Brujin Graph は</p>
-<p><img src="https://drivingmecrazy.netlify.com/blog/about-de-brujin-graph/tandemrepeat.PNG" alt="tandemrepeat" /></p>
+<p><img src="http://127.0.0.1:9990/blog/about-de-brujin-graph/tandemrepeat.PNG" alt="tandemrepeat" /></p>
 <p>と言うような様相を呈する。すでにわかっていると思うが、この状況においては、<strong>そもそもオイラー閉路を求めることが問題ではない</strong>。
 要するに、Rが何回連続しているかを推定し、その回数だけ、ループになっている領域を通ることを許すように緩和させる必要がある。</p>
 <p>一方で、この繰り返し回数Rの推定は、たとえば次のような状況を考えれば、相当難しいことがわかるはずだ。</p>
@@ -229,5 +229,5 @@ H2,H3といったタグを生成するのは、もはや犯罪と言っていい
 </div>
 
     </div>
-  </body>
+  <script src="/livereload.js?port=1024&mindelay=10"></script></body>
 </html>
