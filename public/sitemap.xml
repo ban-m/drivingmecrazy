@@ -1,13 +1,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
-            <loc>https://drivingmecrazy.netlify.com/./about_me/</loc>
+            <loc>http://127.0.0.1:9990/./about_me/</loc>
             
                 <lastmod>2018-08-23</lastmod>
             
         </url>
     
         <url>
+<<<<<<< HEAD
             <loc>https://drivingmecrazy.netlify.com/blog/about-de-brujin-graph/</loc>
             
                 <lastmod>2018-09-01</lastmod>
@@ -17,28 +18,52 @@
         <url>
             <loc>https://drivingmecrazy.netlify.com/blog/about-wheat-genome/</loc>
             
+=======
+            <loc>http://127.0.0.1:9990/blog/about-de-brujin-graph/</loc>
+            
+                <lastmod>2018-09-01</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>http://127.0.0.1:9990/blog/about-scs/</loc>
+            
+                <lastmod>2018-09-28</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>http://127.0.0.1:9990/blog/about-wheat-genome/</loc>
+            
+>>>>>>> 6e85cfb7d44acdc64936ac063d3e2ace33369a02
                 <lastmod>2017-08-23</lastmod>
             
         </url>
     
         <url>
+<<<<<<< HEAD
             <loc>https://drivingmecrazy.netlify.com/blog/paper-a-pitfall-ml-method/</loc>
             
                 <lastmod>2019-01-11</lastmod>
+=======
+            <loc>http://127.0.0.1:9990/blog/processing/</loc>
+            
+                <lastmod>2018-11-11</lastmod>
+>>>>>>> 6e85cfb7d44acdc64936ac063d3e2ace33369a02
             
         </url>
     
     
         <url>
-            <loc>https://drivingmecrazy.netlify.com/</loc>
+            <loc>http://127.0.0.1:9990/</loc>
         </url>
     
         <url>
-            <loc>https://drivingmecrazy.netlify.com/about/</loc>
+            <loc>http://127.0.0.1:9990/about/</loc>
         </url>
     
         <url>
-            <loc>https://drivingmecrazy.netlify.com/blog/</loc>
+            <loc>http://127.0.0.1:9990/blog/</loc>
         </url>
     
     
