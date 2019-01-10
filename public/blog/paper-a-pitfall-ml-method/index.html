@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Fond awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>どうにかなりそう</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;print.css" media="print">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;poole.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;hyde.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;override.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;rss.xml">
+    
+
+    
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+  </head>
+
+  <body class=" ">
+    
+    <div class="sidebar">
+      <div class="container sidebar-sticky">
+        <div class="sidebar-about">
+          
+          <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com"><h1>どうにかなりそう</h1></a>
+          
+          <p class="lead">ゲノム生物学&#x2F;計算生物学等の論文についてのメモや、他の覚書等</p>
+          
+          
+        </div>
+
+        <ul class="sidebar-nav">
+          
+          
+          <li><a href="&#x2F;about_me">About</a></li>
+          
+          <li><a href="&#x2F;blog">Blog</a></li>
+          
+		  <li>
+			<a href="mailto:ikkaidoh@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://twitter.com/Ikkaidoh_Yoh"><i class = "fab fa-twitter"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+
+    <div class="content container">
+      
+<div class="post">
+  <h1 class="post-title">論文紹介#0</h1>
+  <span class="post-date">2019-01-11</span>
+  <h2 id="korehahe">これは何？</h2>
+<p>今年は生産性を上げるために、読んだ論文の要旨をまとめる。これはその第一弾。</p>
+<p>読む論文は<a href="https://drivingmecrazy.netlify.com/blog/paper-a-pitfall-ml-method/"></a>(リンク先はbioRxiv)。</p>
+<p>別にインターネットに書く必要はないが、これから同じ論文を参照することになる、日本語が読める人向けに残しておくことにする。</p>
+<p>本記事はいくつかの理由で削除されうるし、内容に関してはほとんど責任を取らない。</p>
+<p><a name="continue-reading"></a></p>
+<h2 id="lun-wen-yao-zhi">論文要旨</h2>
+<p>タイトルは <strong>A pitfall for machine learning methods aiming to predict across cell types</strong>というもので、著者はワシントン大学のゲノム学者と計算機学者。（だからと言ってどういうこともないが）</p>
+<h2 id="he-gashu-itearulun-wen-nano">何が書いてある論文なの？</h2>
+<p>この論文では、近年、バイオインフォマティクスにおいて使われる機械学習のうち、あるドメインにおけるニューラルネットワークは、ある種のバリデーションの方法を用いると、誤った学習を引き起こすことを述べている。</p>
+<p>具体的には、異なった細胞種から何らかの方法でゲノム全域に渡って説明変数と被説明変数を観測した時、細胞種に関して交差検定法を行ってニューラルネットワークを評価すると、説明変数の特性によっては、求めているような学習器が構成されないことを、実験的に示している。</p>
+<h2 id="nazekoregada-qie-nano">なぜこれが大切なの？</h2>
+<p>細胞種に関して交差検定法を行う手法（Cross-cell-type）は実際に使われているため、この手法が望んでいるような結果をもたらさない場合、該当研究の正当性を示すのが困難になる。特に、この交差検定は、新規の観測できていない細胞種における、ゲノム上の各位置での何らかの値を予測するために使われるので、
+学習器が期待されるような働きをしないと、下流の解析が全て疑わしいものになる。</p>
+<p>例えば、線維芽細胞、肝臓細胞、造血細胞等、分化した体細胞を100種集めて、各サンプルにおいて、ゲノム上の各位置でのメチル化状態と遺伝子発現量を観測できたとしよう。この後、配列の情報やメチル化、細胞種に固有の特徴量等々を説明変数、遺伝子発現の状態を被説明変数として、ニューラルネットワークを学習させたとしよう。</p>
+<p>この時、Cross-cell-typeの交差検定法は、一種類の細胞を除いた全てのデータで学習させた後、その一種類のサンプルで学習器の良さを測ることを、最大100回繰り返す。もし、この学習器が細胞種（に固有の特徴量）に対して、よい汎化性能を示すなら、新しい細胞種（例えば、大量に確保するのが難しいがん細胞）のメチル化状態と特徴量から、遺伝子発現を予測することができる<strong>はず</strong>である。</p>
+<p>このような一見もっともらしいアプローチを使う研究はいくつかあるので、これは実用上も重要だ。</p>
+<h2 id="douyatuteshi-sitano">どうやって示したの？</h2>
+<p>実際に学習器を2つの例で構築する。どちらの例も、説明変数は各位置における配列の情報とメチル化の情報にする。被説明変数は、最初の例では遺伝子発現、二つ目の例ではTAD（Topological associated domain）の切れ目を真偽値であらわしたものとする。学習器はニューラルネットワークを使い、パラメタ数は10^1くらいから10^8程度まで変えていく。学習器の評価はCross-cell-typeの交差検定法における平均精度（真といったもののうち、実際に真だったものの割合）とする。</p>
+<p>（注：TADは要するに核内でDNAがどのように折り畳まれているかを表す領域と思えばよい。紐をある区間ごとに『まとめ』たとき、そのひとつひとつのごちゃごちゃをTADといい、それらの境目をTAD-boundaryという。TADはどうやらメチル化とも、配列とも関係があるようだが……）</p>
+<p>簡単のため、最初の例（遺伝子が発現しているか否かを学習するケース）に絞って話す。Cross-cell-typeで交差検定を行うと、配列情報を入れた時には、モデルのパラメタを増やせば増やすほど、スコアが上がっていった。一方で、メチル化のみを用いた時には、そのようなトレンドは見られなかった。</p>
+<p>このままでは、単にモデルを複雑にした結果、表現力が上がったように思えるが、興味深いことに、Cross-Chromosomal-typeの交差検定を行なった場合、さらにHybridの交差検定を行なった場合、そのようなトレンドは消えた。
+ここでCross-chromosomal-typeの交差検定とは、23対の染色体があった場合、学習に22対の染色体を使い、評価にのこりの1対を使うという交差検定法のことを指し（この時、細胞種に関しては、全ての細胞種を学習に用いる）、Hybridとは、学習には1種を除いた全ての細胞種の、1対の染色体を除いた全ての染色体を用いて、評価を取り除いた種の取り除いた染色体で行う、というものだ。</p>
+<p>そして、最も不思議なことに、次の現象が見られた：各ゲノム上の位置で、学習する細胞種に関して遺伝子発現のOn/Offについて多数決をとる、という簡単な学習器によって、これらのニューラルネットワーク全てよりも良い学習器が得られた。</p>
+<p>これはすなわち、細胞種によって変化しない――つまり、どの細胞種でもON、もしくはどの細胞種でもOff――と言った遺伝子が多いため、このような『平均的な』遺伝子発現のプロファイルを出力するだけで良い、ということを示している。</p>
+<p>翻って考えてみると、なぜ、配列の情報を入れた時には、モデルのパラメタを増やすと、スコアが上がったのだろうか？
+これは<strong>おそらく</strong>、遺伝子の配列が十分にユニークな時、モデルのパラメタそれぞれに、その配列の情報を用いて、その<strong>遺伝子専用</strong>のパラメタにすることができ、
+学習の際に、上記の『細胞種間での多数決』とほとんど同じ学習ができていることによるのだろう。</p>
+<p>敷衍して考えると、この問題は、細胞種間でほとんど違わない特徴量を、各位置ごとにユニークなフィンガープリントが作れるような説明変数で予測しようとすると、ニューラルネットワークが思わぬ学習をする、ということだとも考えられる。</p>
+<h2 id="jie-ju-dousurebaiino">結局どうすればいいの？</h2>
+<p>一つ目には、学習器をきちんと評価することだ。例えば、上記の『多数決』のような、とても簡単で、動作が理解しやすいものを使うのがよい。この簡単な学習器さえも超えられないような学習器ならば、おそらく使う必要はない（従って、問題は一切ない）。</p>
+<p>二つ目には、今回のような『ほどんどが細胞種に共通の値を持つ』ような場合は、各ゲノム上の位置で『可変性』（=細胞種間での分散）によって、位置をクラスタ分けして、そのクラスタごとに評価をするのが良い。</p>
+<h2 id="za-gan">雑感</h2>
+<p>通常、機械学習におけるミスといえば、過学習（これはある程度は避けられない）とリーケージ（これは注意すれば避けられる）が挙げられる。
+一方で、今回取り上げた落とし穴は、上記二つには含まれないし、もっといえば、実際、論文の著者たちがいうように、
+学習器としてはとても優秀なことをしているとみることもできる。
+すなわち、細胞種間で変化するものが、全体の1%しかないなら、残り99%の遺伝子を、各々に対して、一つずつパラメタを使って記憶してしまえば、どのような細胞種が来ても99%の精度で答えられるということだ。
+このような状況はゲノミクスではよくあり、メチル化の予測などは、『どこもメチル化していない』と答えただけで、Accuracyは相当高くなる（というのも、全体の塩基のうち、メチル化しているのはほんのわずかだから）。</p>
+<p>また、根本的な問題としては、そもそも予測してはいけない例で予測していることがままある。
+冒頭に挙げたがん細胞の遺伝子発現を予測する、などはそのいい（？）例で、<strong>通常</strong>の細胞から逸脱して、何か遺伝子発現が<strong>壊れた</strong>ものをがん細胞だと言っている限り、
+通常の細胞によって学習したデータで、がん細胞の状態を予測するのは、単に入力のドメインを誤っている（学習していない領域の値を入力値として使っている）。</p>
+<p>要するに、頑張って直接観測しろということだ。</p>
+
+</div>
+
+    </div>
+
+  </body>
+
+</html>
