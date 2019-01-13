@@ -1,7 +1,7 @@
 +++
-title = ""
-date = 2018-08-01
-draft = true
+title = "論文紹介：A small is big in <i>Arabidopsis</i> mitochondrial ribosome"
+date = 2019-01-13
+draft = false
 tags = []
 # category = "diary"
 order = 0
