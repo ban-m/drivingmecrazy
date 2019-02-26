@@ -6,7 +6,17 @@
         <generator>Gutenberg</generator>
         <language>ja</language>
         <atom:link href="https://drivingmecrazy.netlify.com/rss.xml/" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Sun, 13 Jan 2019 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 26 Feb 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>実は甘くないイチゴゲノムについて</title>
+                <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+                <link>https://drivingmecrazy.netlify.com/blog/about-strawberry-genome/</link>
+                <guid>https://drivingmecrazy.netlify.com/blog/about-strawberry-genome/</guid>
+                <description>&lt;h1 id=&quot;korehahe&quot;&gt;これは何？&lt;&#x2F;h1&gt;
+&lt;p&gt;今週発表された苺ゲノムのアセンブリについての雑感を記したもの。アセンブリについて述べる。&lt;&#x2F;p&gt;
+</description>
+            </item>
         
             <item>
                 <title>論文紹介：Small is big in &lt;i&gt;Arabidopsis&lt;&#x2F;i&gt; mitochondrial ribosome</title>
@@ -19,14 +29,6 @@
 内容としては、植物、得にシロイヌナズナのミトコンドリア内のリボソームの構造を解析した論文。
 研究チームはフランス。&lt;&#x2F;p&gt;
 </description>
-            </item>
-        
-            <item>
-                <title>論文紹介：A small is big in &lt;i&gt;Arabidopsis&lt;&#x2F;i&gt; mitochondrial ribosome</title>
-                <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
-                <link>https://drivingmecrazy.netlify.com/blog/temp/</link>
-                <guid>https://drivingmecrazy.netlify.com/blog/temp/</guid>
-                <description></description>
             </item>
         
             <item>
