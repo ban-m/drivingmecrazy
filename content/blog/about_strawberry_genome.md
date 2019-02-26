@@ -15,6 +15,8 @@ template = "page.html"
 
 今週発表された苺ゲノムのアセンブリについての雑感を記したもの。アセンブリについて述べる。
 
+ベースになる論文は2月26日にNature Genetics に出版された[Origin and evolution of the octoploid strawberry genome](https://www.nature.com/articles/s41588-019-0356-4)である。
+
 <!-- more -->
 
 # 内容
