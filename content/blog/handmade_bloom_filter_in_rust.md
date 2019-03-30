@@ -105,3 +105,177 @@ where T:Fn(u8) -> u8{
 のように書く。
 
 
+ところで、BloomFilterはある自然数t個のハッシュ関数を持つのだが、どのように型をつければいいだろうか？　実は、素数の上での剰余類で考えているとき、ハッシュ関数に独立性ではなく、ペアワイズ独立性くらいの緩い条件しか課さないなら、二つハッシュ関数があればいいということが知られている。
+
+実際に、ペアワイズ独立性を満たせばBloomFilterの運用には十分なことが多いので、今回はそれに習おう。直感的に言えば、BloomFilterは内部に二つの関数を持つ構造体になる。もう少しRustっぽくいうと、BloomFilterは、Fn(u8)->u8を実装するメンバを二つ持つ構造体になる：
+
+
+```rust
+struct BloomFilter<F>
+where F:Fn(u8) -> u8
+{
+	hash1:F,
+	hash2:F,
+	/* Other fields omitted */
+}
+
+```
+
+実際、このコードは次のような例ではうまく動く。
+```rust
+fn main(){
+	let f = |x| x * 2;
+	let _bf = BloomFilter{hash1:f.clone(), hash2:f};
+	// continues
+}
+```
+
+ところが、次のようなコードはコンパイルできない：
+
+```rust
+fn main(){
+	let f = |x| x * 2;
+	let g = |x| x * 2;
+	let _bf = BloomFilter{hash1:f, hash2:g};
+	// continues
+}
+
+```
+
+実際、上のシグネチャは『Fn(u8)->u8を実装している型Tを二つ持つ』であって、『二つのFn(u8)->u8を実装している型を一つずつ持つ』ではない。**各クロージャはそれぞれユニークな型を持つ**ことを考えると、確かに上のコードをコンパイラが弾くのは正しい挙動になる。
+
+よって、
+
+```rust
+struct BloomFilter<F,T>
+where F:Fn(u8) -> u8,
+      T:Fn(u8) -> u8
+
+{
+	hash1:F,
+	hash2:T,
+	/* Other fields omitted */
+}
+
+```
+が正しいシグネチャになる。
+
+
+さて、この構造体にimplするときも、少し注意が必要になる。例えば、Fn(u8)->u8を実装している型T,Fについて、BloomFilter<T,F>を作って、それにメソッドを定義したいときには、
+
+```rust
+impl<T,F> BloomFilter<F,T>
+where F:Fn(u8)->u8,
+	T:Fn(u8)->u8
+{
+	fn eval(&self)->u8{
+		(self.hash1)(1) + (self.hash2)(1)
+	}
+}
+fn main(){
+	let f = |x| x * 2;
+	let g = |x| x * 2;
+	let bf = BloomFilter{hash1:f, hash2:g};
+	println!("{}",bf.eval()) // 4
+```
+
+などとする。一方で、『デフォルトのBloomFilterを（自分で定義した）デフォルトの関数で定義したい』ときに
+
+```rust
+
+fn outer(x:u8)->u8{
+	x * 2
+}
+
+impl<T,F> BloomFilter<F,T>
+where F:Fn(u8)->u8,
+	T:Fn(u8)->u8
+{
+	fn new()->Self{
+		BloomFilter{
+			hash1:outer,
+			hash2:outer
+		}
+	}
+}
+fn main(){
+	let _bf = BloomFilter::new();
+}
+
+
+```
+
+はコンパイルできない。一方で、
+
+```rust
+
+fn outer(x:u8)->u8{
+	x * 2
+}
+
+impl<T,F> BloomFilter<F,T>
+where F:Fn(u8)->u8,
+	T:Fn(u8)->u8
+{
+	fn new(h1:F,h2:T)->Self{
+		BloomFilter{
+			hash1:h1,
+			hash2:h2,
+		}
+	}
+}
+fn main(){
+	let _bf = BloomFilter::new(outer,outer);
+}
+```
+はコンパイルできる！
+
+
+これは一瞬不思議に思えるが、『外から関数を与える』ことと、『内側で関数を勝手に選ぶ』こととが異なることに注意すればいい。
+つまり、後者のコードは、確かに、型は`BloomFilter::new()`を呼ぶ側(`main`)によって決められている一方で、
+前者のコードでは（implは）『Fn(u8)->u8を実装している二つの型F,Tについてのジェネリクス』にも関わらず、関数（fn(u8)->u8という**型**を持つ）によって
+一意に型が決まってしまったBloomFilterを返している。
+事実、我々は`impl Fn(u8)->u8 for u8`などとすれば、u8にも`Fn(u8)->u8`を実装できてしまうため、この型への制限は厳しすぎる。
+
+要するに、`BloomFilter<fn(u8)->u8, fn(u8)->u8 >`という具体的な型に対して実装すればいい。
+
+
+```rust
+fn outer(x:u8)->u8{
+	x * 2
+}
+
+impl BloomFilter<fn(u8)->u8, fn(u8)->u8 >
+{
+	fn new()->Self{
+		BloomFilter{
+			hash1:outer,
+			hash2:outer
+		}
+	}
+}
+
+impl<T,F> BloomFilter<F,T>
+where F:Fn(u8)->u8,
+	T:Fn(u8)->u8
+{
+	fn eval(&self)->u8{
+		(self.hash1)(1) + (self.hash2)(1)
+	}
+}
+
+fn main(){
+	let bf = BloomFilter::new();
+	println!("{}",bf.eval()); // 4
+}
+
+```
+
+ここで、具体的な型として帰ってきた`bf:BloomFilter<fn(u8)->u8, fn(u8)->u8 >`について、`bf.eval()`はコンパイルが通ることに注意する。
+
+
+このようにして、BloomFilter内に関数っぽいものを持たせられるようになったら、後は適当にBitVector等々をメンバにそろえてやれば、順当に実装できる。
+
+
+結果としては、150Mbp程度の入力に対しては、`HashSet<Vec<u8>>`を扱うよりも、20％くらい早い$k$-merの表現を持つことができた。
+（やってみたい方はrust `git clone git clone https://ban-m@bitbucket.org/yoh_ikkaidoh/handmade_bloom_filter.git && cd handmade_bloom_filter && cargo test --release -- --nocapture`とすると、望むらくは、再現できる）
