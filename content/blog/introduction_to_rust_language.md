@@ -1,3 +1,16 @@
++++
+title = "A Short Introduction to Rust Language"
+date = 2019-04-26
+draft = false
+tags = []
+# category = "diary"
+order = 0
+weight = 0
+aliases = []
+template = "page.html"
+[extra]
++++
+
 # これは何？
 
 Rust言語についてのイントロダクション。
