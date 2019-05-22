@@ -23,7 +23,7 @@ template = "page.html"
 
 となる。
 
-<!--more-->
+<!-- more -->
 
 # 内容
 
