@@ -22,6 +22,13 @@
         </url>
     
         <url>
+            <loc>https://drivingmecrazy.netlify.com/blog/about-sequence-compression/</loc>
+            
+                <lastmod>2019-05-20</lastmod>
+            
+        </url>
+    
+        <url>
             <loc>https://drivingmecrazy.netlify.com/blog/about-strawberry-genome/</loc>
             
                 <lastmod>2019-02-26</lastmod>
@@ -32,6 +39,27 @@
             <loc>https://drivingmecrazy.netlify.com/blog/about-wheat-genome/</loc>
             
                 <lastmod>2017-08-23</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https://drivingmecrazy.netlify.com/blog/handmade-bloom-filter-in-rust/</loc>
+            
+                <lastmod>2019-03-28</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https://drivingmecrazy.netlify.com/blog/introduction-to-rust-language/</loc>
+            
+                <lastmod>2019-04-26</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https://drivingmecrazy.netlify.com/blog/nonblockingio/</loc>
+            
+                <lastmod>2019-05-22</lastmod>
             
         </url>
     
@@ -53,6 +81,13 @@
             <loc>https://drivingmecrazy.netlify.com/blog/processing/</loc>
             
                 <lastmod>2018-11-11</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https://drivingmecrazy.netlify.com/blog/rust-c-ffi/</loc>
+            
+                <lastmod>2019-06-14</lastmod>
             
         </url>
     

@@ -48,6 +48,7 @@
 		  <li>
 			<a href="mailto:ikkaidoh@gmail.com"><i class="fas fa-envelope"></i></a>
 			<a href="https://twitter.com/Ikkaidoh_Yoh"><i class = "fab fa-twitter"></i></a>
+			<a href="https://bitbucket.org/yoh_ikkaidoh"><i class="fab fa-bitbucket"></i></i></a>
 			<!-- <a href=""><i class="fab fa-bitbucket"></i></a> -->
           </li>
           
@@ -63,6 +64,147 @@
         
         <div class="post">
           <h1 class="post-title">
+            <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;rust-c-ffi&#x2F;">
+              RustからCの関数&#x2F;構造体&#x2F;ポインタをFFIを用いて使用する
+            </a>
+          </h1>
+	  
+          <div class="read-more">
+            <a href = "https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;rust-c-ffi&#x2F;">もっと読む</a>
+          </div>
+          <span class="post-date">2019-06-14</span>
+        </div>
+        
+        
+        
+        <div class="post">
+          <h1 class="post-title">
+            <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;nonblockingio&#x2F;">
+              Rust言語でファイルI&#x2F;Oと入力の処理を別のスレッドで実行する(非同期I&#x2F;O)
+            </a>
+          </h1>
+	  
+	  <div class="post-summary">
+	    <h1 id="korehahe">これは何？</h1>
+<p>タイトル通り、Rust言語で、入力（ファイルの読み込み）をあるスレッドで行い、入力の処理を別のスレッドで行うプログラムを書く。</p>
+<p>なぜこんな処理が必要になっているかというと、ファイルシステムが（単にインターネットを介しているなどの理由で）遅いことがあるからだ。また、データを一つずつ処理できるときは、いちいち<code>Vec&lt;T&gt;</code>などのコンテナにアロケートするより、出てきた順に処理した方が早くなりそう。</p>
+<p>要点としては、</p>
+<ul>
+<li><code>Arc&lt;Mutex&lt;T&gt;&gt;</code>を使ってデータのやり取りをするのはヤバい</li>
+<li>Multiple producer, single consumer channelが標準ライブラリに実装されているので、それを使う</li>
+</ul>
+<p>となる。</p>
+
+	  </div>
+	  
+          <div class="read-more">
+            <a href = "https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;nonblockingio&#x2F;">もっと読む</a>
+          </div>
+          <span class="post-date">2019-05-22</span>
+        </div>
+        
+        
+        
+        <div class="post">
+          <h1 class="post-title">
+            <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-sequence-compression&#x2F;">
+              塩基配列の圧縮について
+            </a>
+          </h1>
+	  
+	  <div class="post-summary">
+	    <h2 id="korehahe">これは何？</h2>
+<p>DNAシークエンサーの出力を圧縮することについてのメモ。
+対象は</p>
+<ul>
+<li>ゲノムを扱っている</li>
+<li>バイオインフォマティシャンで</li>
+<li>配列の圧縮に興味がある</li>
+</ul>
+<p>人。いくつかの基本的な考え方と、現状の圧縮アルゴリズムの方針について簡単に述べる。
+配列圧縮の有用性については<strong>書かない</strong>。（そもそも、配列なんて圧縮しなくても、二次記憶は十分にある、という考え方は完全に妥当だし、私もこの意見には賛同する。一方で、配列の圧縮は、HDDやSSDにどうやって保存するのか、という問題以上の価値が実はある）</p>
+<p>基本的には、DNAシークエンサーとしてはilluminaのWGSデータを考える。つまり、</p>
+<ul>
+<li>リードはだいたい100塩基で、</li>
+<li>エラー率は1％くらいで、</li>
+<li>あるゲノムがあって、そこから（バイアスはあるにせよ）サンプリングされている</li>
+</ul>
+<p>という状況だ。もう少し、プロ出ない人向けに言い直すと、</p>
+<ul>
+<li>DNAシークエンサーは、DNA全長を読めるわけではなく、断片をちょっと読むのと大量に繰り返すのだが、</li>
+<li>その一回の読み取り量が100塩基くらいで、</li>
+<li>読み取りを失敗する確率が、塩基あたり1%くらいで、</li>
+<li>事前に「これは人のゲノムを読んでいます」「トマトです」と言った事前知識がある</li>
+</ul>
+<p>ということだ。</p>
+
+	  </div>
+	  
+          <div class="read-more">
+            <a href = "https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-sequence-compression&#x2F;">もっと読む</a>
+          </div>
+          <span class="post-date">2019-05-20</span>
+        </div>
+        
+        
+        
+        <div class="post">
+          <h1 class="post-title">
+            <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;introduction-to-rust-language&#x2F;">
+              A Short Introduction to Rust Language
+            </a>
+          </h1>
+	  
+	  <div class="post-summary">
+	    <h1 id="korehahe">これは何？</h1>
+<p>Rust言語についてのイントロダクション。</p>
+<p>対象としては、</p>
+<ul>
+<li>C/C++/pythonを使っている</li>
+<li>バイオインフォマティシャン</li>
+</ul>
+<p>を想定していて、Fasta/Fastqファイル等々のI/Oを含めて、ある程度読み書きできるようになることを目標にしています。</p>
+
+	  </div>
+	  
+          <div class="read-more">
+            <a href = "https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;introduction-to-rust-language&#x2F;">もっと読む</a>
+          </div>
+          <span class="post-date">2019-04-26</span>
+        </div>
+        
+        
+        
+        <div class="post">
+          <h1 class="post-title">
+            <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;handmade-bloom-filter-in-rust&#x2F;">
+              手作りデータ構造：BloomFilter to count k-mers in a dataset
+            </a>
+          </h1>
+	  
+	  <div class="post-summary">
+	    <h2 id="korehahe">これは何？</h2>
+<p>データ内のk-merを数えるためのBloomFilterをRustで実装するときのテクについていくつか書いたもの。</p>
+<ul>
+<li>k-mer: 長さkの文字列のこと。k-gramと同じものを指す。例えば、&quot;AAA&quot;は3-mer。</li>
+<li>BloomFilter:　複数のハッシュ関数を用いて、要素のフィンガープリントを作ることで、Hashableな要素からなる集合をコンパクトかつ高速に表すためのデータ構造。</li>
+<li>Rust: Rustとは、安全性、平行性、そして速度に焦点を当てたシステムプログラミング言語です。</li>
+</ul>
+<p>今回は諸事情があって、文字列をアルファベット{A,C,G,T}上のものに絞る。</p>
+<p>実装は<a href="https://bitbucket.org/yoh_ikkaidoh/handmade_bloom_filter/src/master/">bitbucket.org</a>においてある。</p>
+
+	  </div>
+	  
+          <div class="read-more">
+            <a href = "https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;handmade-bloom-filter-in-rust&#x2F;">もっと読む</a>
+          </div>
+          <span class="post-date">2019-03-28</span>
+        </div>
+        
+        
+        
+        <div class="post">
+          <h1 class="post-title">
             <a href="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-strawberry-genome&#x2F;">
               実は甘くないイチゴゲノムについて
             </a>
@@ -71,6 +213,7 @@
 	  <div class="post-summary">
 	    <h1 id="korehahe">これは何？</h1>
 <p>今週発表された苺ゲノムのアセンブリについての雑感を記したもの。アセンブリについて述べる。</p>
+<p>ベースになる論文は2月26日にNature Genetics に出版された<a href="https://www.nature.com/articles/s41588-019-0356-4">Origin and evolution of the octoploid strawberry genome</a>である。</p>
 
 	  </div>
 	  

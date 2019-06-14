@@ -23,6 +23,36 @@
 
     
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<meta name="twitter:card" content="summary" /> 
+<meta name="twitter:site" content="@Ikkaidoh_Yoh" />
+<meta property="og:url" content="https:&#x2F;&#x2F;drivingmecrazy.netlify.com&#x2F;blog&#x2F;about-scs&#x2F;"/> 
+<meta property="og:title" content="最短共通包含文字列問題について" /> 
+<meta property="og:description" content="&lt;h2 id=&quot;jin-ri-shu-kukoto&quot;&gt;今日書くこと&lt;&#x2F;h2&gt;
+&lt;p&gt;今日は最短共通包含文字列問題(Shortest Common Superstring Problem)という問題がNP完全であることを示す。&lt;&#x2F;p&gt;
+&lt;p&gt;なんで突然こんな話を始めたかと言うと、これはゲノムアセンブリに関わっているからで（最近、ゲノムアセンブリについて
+ずっと書いているが、僕は別にゲノムをアセンブルするような趣味も研究もしていない）、具体的には、次のようになる。&lt;&#x2F;p&gt;
+&lt;p&gt;ゲノムアセンブリ（短いDNA断片から、元のゲノムを復元する）は、要するに、DNA断片の集合から、それらを
+うまく『説明』するような配列を生成しろ、という問題だと思うことが出来る。&lt;&#x2F;p&gt;
+&lt;p&gt;この『説明』というのが難しく、一体何を持って説明とするかは議論の分かれるところである。&lt;&#x2F;p&gt;
+&lt;p&gt;例えば、&lt;em&gt;すべてのDNA断片を部分文字列として含む&lt;&#x2F;em&gt;というのを、『説明する』ことだとすると――確かに、
+この定義は、DNA断片が虚空からではなく、ゲノムから読まれていると言うことは保証してくれるが――
+色々と問題がある。&lt;&#x2F;p&gt;
+&lt;p&gt;というのも、この定義に則って言えば、得られたDNA断片をすべて連接（つなげて）出力したものも、
+DNA断片を『説明する』事になってしまうからだ。
+もちろん、ゲノムを何十回・何百回を読んだ結果としてDNA断片たちが得られていると考えると、
+このアセンブリは長すぎる。&lt;&#x2F;p&gt;
+&lt;p&gt;この『長過ぎる』ということを逆手に取って、では、次のように定義してみてはどうだろうか。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『説明する』とは、すべてのDNA断片を部分文字列として含むような文字列のうち、かなり短いものである&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;もちろん、問題を&lt;em&gt;かなり&lt;&#x2F;em&gt;の部分に押し付けているだけなのだが、これを&lt;em&gt;最も短い&lt;&#x2F;em&gt;としたものが、
+まさにShortest common superstring problemという問題である。&lt;&#x2F;p&gt;
+&lt;p&gt;今日は、この問題の厳密な定義から始めて、これが難しいことを示す。
+論文としては、&lt;&#x2F;p&gt;
+&lt;p&gt;Gallant, J., Maier, D. and Astorer, J., 1980. On finding minimal length superstrings. Journal of Computer and System Sciences, 20(1), pp.50-58.(https:&#x2F;&#x2F;doi.org&#x2F;10.1016&#x2F;0022-0000(80)90004-5)&lt;&#x2F;p&gt;
+&lt;p&gt;をほぼ完コピします。&lt;&#x2F;p&gt;
+"/>
+<meta property="og:image" content="https:&#x2F;&#x2F;drivingmecrazy.netlify.com/global/thumbnail.jpg" /> 
 
   </head>
 
@@ -49,6 +79,7 @@
 		  <li>
 			<a href="mailto:ikkaidoh@gmail.com"><i class="fas fa-envelope"></i></a>
 			<a href="https://twitter.com/Ikkaidoh_Yoh"><i class = "fab fa-twitter"></i></a>
+			<a href="https://bitbucket.org/yoh_ikkaidoh"><i class="fab fa-bitbucket"></i></i></a>
 			<!-- <a href=""><i class="fab fa-bitbucket"></i></a> -->
           </li>
           
