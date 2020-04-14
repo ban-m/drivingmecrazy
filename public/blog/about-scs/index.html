@@ -117,8 +117,7 @@ DNA断片を『説明する』事になってしまうからだ。
 論文としては、</p>
 <p>Gallant, J., Maier, D. and Astorer, J., 1980. On finding minimal length superstrings. Journal of Computer and System Sciences, 20(1), pp.50-58.(https://doi.org/10.1016/0022-0000(80)90004-5)</p>
 <p>をほぼ完コピします。</p>
-<p><a name="continue-reading"></a></p>
-<h4 id="definition-shortest-common-superstring-problem">definition-Shortest Common Superstring Problem</h4>
+<span id="continue-reading"></span><h4 id="definition-shortest-common-superstring-problem">definition-Shortest Common Superstring Problem</h4>
 <p>あるアルファベット\(\Sigma \)と、その上の文字列の集合\( S=\{s_1,s_2,\cdots,s_n\} \)が与えられたときに、\( S \)のShortest Common Superstringとは、
 \( S \)内の全ての文字列を部分文字列として含むような、\( \Sigma \)上の文字列のうち、最短のものと定義する。
 どのような\( S \)に対しても、自明にShortest Common Superstringはある。</p>
@@ -184,7 +183,7 @@ Yesインスタンスに対して、オラクルとして長さ\( K \)のShortes
 </ul>
 <p>いずれかである事がわかる。この\( s \rightsquigarrow t \)の部分では、\( (v,t') \)の形の辺は使われるはずがないので、そのまま\( s,t \)を\( v \)に置き換えれば、\( G \)上のハミルトン閉路と見ることができる。</p>
 <p>要するに、ハミルトン閉路問題は<strong>すべて、Yes/Noを変更することなく</strong>拡張ハミルトンパス問題に多項式時間で変換できた（多項式還元出来た、という）。拡張ハミルトンパス問題を解くアルゴリズムAがあるとすると、ハミルトン閉路問題を、拡張ハミルトンパス問題に変換してAで解くことが出来る。</p>
-<p>ところで、ハミルトン閉路問題は、それ自身、<strong><em>どんなNP問題も、ハミルトン閉路問題に多項式時間出来る</em></strong>という性質を持っている（NP完全、という）ので、拡張ハミルトンパス問題もNP完全である。</p>
+<p>ところで、ハミルトン閉路問題は、それ自身、<em><strong>どんなNP問題も、ハミルトン閉路問題に多項式時間出来る</strong></em>という性質を持っている（NP完全、という）ので、拡張ハミルトンパス問題もNP完全である。</p>
 <p>では、次に、SCSと拡張ハミルトンパス問題が同じくらい難しいことを示そう。</p>
 <h4 id="theorem-scs-npc">theorem-SCS-NPC</h4>
 <p>拡張ハミルトンパス問題は、多項式時間で、問題のYes/Noを変えずに、SCS問題に変換することができる。</p>
@@ -197,7 +196,7 @@ Yesインスタンスに対して、オラクルとして長さ\( K \)のShortes
 \Sigma = \{v,\bar{v}\mid v \in V \} \cup \{\#,\$,\S\}
 $$</p>
 <p>例えば、\( \{1,\bar{1},2,\bar{2},\cdots,\bar{n},\#,\$,\S \} \)のようになる。</p>
-<p>次に、文字列を作る。まず、\( n \)<strong><em>以外</em></strong>の各頂点\( v\in V \)に対応する文字列の集合\( A_v \)を作る。
+<p>次に、文字列を作る。まず、\( n \)<em><strong>以外</strong></em>の各頂点\( v\in V \)に対応する文字列の集合\( A_v \)を作る。
 \( v \)に隣接する頂点(つまり、\( (v,w)\in E \)を満たすような\( w \))の集合を、並び順を付けて\( R_v = \{w_0,\cdots, w_{OUT(v)-1}\} \)とする。例えば、頂点3が\( \{4,5,6\} \)への辺を持っていた場合、\( R_3 \)としては、 \( \{w_0,w_1,w_2\} = \{4,5,6\} \)ととってもいいし、\( \{w_0,w_1,w_2\} = \{4,6,5\} \)ととってもいい。要するに、\( v \)の隣接頂点の『配列』を\( R_v \)と置く。</p>
 <p>\( A_v \)は次の\( 2OUT(v) \)個の文字列からなる集合をする。</p>
 <p>$$

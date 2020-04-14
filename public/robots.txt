@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: https://drivingmecrazy.netlify.com/sitemap.xml

@@ -89,8 +89,7 @@
 <p>ちなみに、植物モデル生物シロイヌナズナは、約140Mbpくらいで、染色体は5本、配列は100本である。</p>
 <p>今日は、『ゲノムの文字を正しく並べる』（ゲノムアセンブリを行う、という）ことが何を指しているのか、これまで何がされてきたのか、どんな技術があるか、といった周辺知識を書いておくことで、140字には載り切らなかったであろう情報を補填しておきたい。</p>
 <p>一応、確認を取りながら書いていくつもりだが、もちろん、たくさん間違いがあると思うので、見つけ次第、Twitterやメールで教えていただけると嬉しいです。</p>
-<p><a name="continue-reading"></a></p>
-<h2 id="genomuasenburigai-guan">ゲノムアセンブリ概観</h2>
+<span id="continue-reading"></span><h2 id="genomuasenburigai-guan">ゲノムアセンブリ概観</h2>
 <p>次の説明で、だいたいわかった人は次に進もう。
 名前付けなどは、それが人為的である限り、じっさいどうでもよく、それがどういうものなのかが大切だ。</p>
 <blockquote>
@@ -144,7 +143,10 @@ The totality of genetic information belonging to a cell or an organisms; in part
 <li>誤って読む確率は1/1000より小さい</li>
 </ul>
 <p>実際は、illumina社のシークエンサーにはいくつか種類があり、特性も異なっているのだが、これらの特徴はだいたいどれも同じだ。</p>
-<p>（原理が知りたい人は、次のYouTube動画がおすすめ<div ><iframe src="https://www.youtube.com/embed/fCd6B5HRaZ8" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>）</p>
+<p>（原理が知りたい人は、次のYouTube動画がおすすめ<div >
+<iframe src="https://www.youtube.com/embed/fCd6B5HRaZ8" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe></p>
+</div>）
 <p>本当は、454やSOLiDと言ったシークエンサーを紹介してもいいが、これらはすでに歴史の遺物とみなしても差し支えない。</p>
 <p>すぐに気がつくのが、これはほとんど『読んでいる』うちに入らないことだ。
 3G文字のうち、たった150字、それもランダムにしか読めない機械を使わざるを得ないことを想像してもらいたい。前述のアナロジーなら、『<strong>同じ本を100冊用意して、シュレッダーにかけて、出てきたゴミを渡されて、「はい、じゃあ元の本に戻してね」</strong>』と言われるようなものだ。</p>
@@ -161,9 +163,15 @@ The totality of genetic information belonging to a cell or an organisms; in part
 開発されたのは最近で、PacBioはようやく『PacBioとタイトルに書いただけでは通らなくなった』状態、nanoporeはまだ、nanoporeと書いただけで論文が出やすくなる状態だ。利益相反に当たる可能性があるので、詳しいことは避けるが、</p>
 <p>動作原理は</p>
 <p>PacBio</p>
-<div ><iframe src="https://www.youtube.com/embed/NHCJ8PtYCFc" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div >
+    <iframe src="https://www.youtube.com/embed/NHCJ8PtYCFc" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+</div>
 <p>Oxford Nanopore Technology</p>
-<div ><iframe src="https://www.youtube.com/embed/GUb1TZvMWsw" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div >
+    <iframe src="https://www.youtube.com/embed/GUb1TZvMWsw" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+</div>
 <p>で見ることができる。</p>
 <p>特徴としては、</p>
 <ul>
