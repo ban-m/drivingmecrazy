@@ -1,13 +1,17 @@
 +++
 title = "論文紹介：Small is big in <i>Arabidopsis</i> mitochondrial ribosome"
 date = 2019-01-13
-draft = false
+draft = true
 tags = []
 # category = "diary"
 order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["Biology"]
+categories = []
+
 [extra]
 +++
 

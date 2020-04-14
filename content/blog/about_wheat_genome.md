@@ -8,6 +8,10 @@ order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["Genome", "Biology", "Genome Biology"]
+categories = ["Biology"]
+
 [extra]
 +++
 

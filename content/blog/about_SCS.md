@@ -2,12 +2,14 @@
 title = "最短共通包含文字列問題について"
 date = 2018-09-28
 draft = false
-tags = []
-# category = "diary"
 order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["Computer Science", "String problem", "Bioinformatics"]
+categories = ["Bioinformatics"]
+
 [extra]
 +++
 

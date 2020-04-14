@@ -1,85 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <!-- Fond awesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <!-- Enable responsiveness on mobile devices-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+{% extends "hyde/templates/index.html" %}
 
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+{% block extra_head %}
+<!-- Fond awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="{{ get_url(path="override.css", trailing_slash=false) }}">
+{% endblock extra_head %}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ get_url(path="print.css", trailing_slash=false) }}" media="print">
-    <link rel="stylesheet" href="{{ get_url(path="poole.css", trailing_slash=false) }}">
-    <link rel="stylesheet" href="{{ get_url(path="hyde.css", trailing_slash=false) }}">
-    <link rel="stylesheet" href="{{ get_url(path="override.css", trailing_slash=false) }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-    {% if config.generate_rss %}
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
-    {% endif %}
-
-    {% block extra_head %}
-    {% endblock extra_head %}
-  </head>
-
-  <body class="{{ config.extra.hyde_theme }} {% if config.extra.hyde_reverse %}layout-reverse{% endif %}">
-    {% block sidebar %}
-    <div class="sidebar">
-      <div class="container {% if config.extra.hyde_sticky %}sidebar-sticky{% endif %}">
-        <div class="sidebar-about">
-          {% block sidebar_about %}
-          <a href="{{ config.base_url }}"><h1>{{ config.title }}</h1></a>
-          {% if config.description %}
-          <p class="lead">{{config.description}}</p>
-          {% endif %}
-          {% endblock sidebar_about %}
-        </div>
-
-        <ul class="sidebar-nav">
-          {% block sidebar_nav %}
-          {% for link in config.extra.hyde_links %}
-          <li><a href="{{link.url}}">{{link.name}}</a></li>
-          {% endfor %}
-		  <li>
-			<a href="mailto:ikkaidoh@gmail.com"><i class="fas fa-envelope"></i></a>
-			<a href="https://twitter.com/Ikkaidoh_Yoh"><i class = "fab fa-twitter"></i></a>
-			<a href="https://bitbucket.org/yoh_ikkaidoh"><i class="fab fa-bitbucket"></i></i></a>
-			<!-- <a href=""><i class="fab fa-bitbucket"></i></a> -->
-          </li>
-          {% endblock sidebar_nav %}
-        </ul>
-      </div>
+{% block sidebar %}
+<div class="sidebar">
+  <div class="container {% if config.extra.hyde_sticky %}sidebar-sticky{% endif %}">
+    <div class="sidebar-about">
+      {% block sidebar_about %}
+      <a href="{{ config.base_url }}"><h1>{{ config.title }}</h1></a>
+      {% if config.description %}
+      <p class="lead">{{config.description}}</p>
+      {% endif %}
+      {% endblock sidebar_about %}
     </div>
-    {% endblock sidebar %}
+    <ul class="sidebar-nav">
+      {% block sidebar_nav %}
+      {% for link in config.extra.hyde_links %}
+      <li><a href="{{link.url}}">{{link.name}}</a></li>
+      {% endfor %}
+	  <li>
+		<a href="mailto:ban-m@g.ecc.u-tokyo.ac.jp"><i class="fas fa-envelope"></i></a>
+		<a href="https://github.com/bam-m"><i class="fab fa-github"></i></i></a>
+      </li>
+      {% endblock sidebar_nav %}
+    </ul>
+  </div>
+</div>
+{% endblock sidebar %}
 
-    <div class="content container">
-      {% block content %}
-      <div class="posts">
-        {% for page in section.pages %}
-        {% if not page.draft %}
-        <div class="post">
-          <h1 class="post-title">
-            <a href="{{ page.permalink }}">
-              {{ page.title }}
-            </a>
-          </h1>
-	  {% if page.summary is string %}
-	  <div class="post-summary">
-	    {{ page.summary | safe }}
-	  </div>
-	  {% endif %}
-          <div class="read-more">
-            <a href = "{{ page.permalink}}">もっと読む</a>
-          </div>
-          <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-        </div>
-        {% endif %}
-        {% endfor %}
-      </div>
-      {% endblock content %}
-    </div>
-  </body>
-</html>

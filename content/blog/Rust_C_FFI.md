@@ -6,6 +6,9 @@ order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["C", "Rust", "Programming", "FFI"]
+categories = ["Programming"]
 [extra]
 
 +++

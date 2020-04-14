@@ -8,6 +8,10 @@ order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["Bioinformatics", "Programming", "Rust", "BloomFilter"]
+categories = ["Bioinformatics"]
+
 [extra]
 +++
 

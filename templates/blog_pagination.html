@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="posts">
+  {% for page in paginator.pages %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ page.permalink }}">
+        {{ page.title }}
+      </a>
+    </h1>
+    {% if page.summary is string %}
+    <div class="post-summary">
+      {{ page.summary | safe }}
+    </div>
+    {% endif %}
+    <div class="read-more">
+      <a href = "{{ page.permalink}}">もっと読む</a>
+    </div>
+    <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+  </div>
+  {% endfor %}
+  <div class = "pagination-nav">
+    {% if paginator.previous %}
+    <a href="{{ paginator.previous }}">&laquo; Previous</a> |
+    {% endif %}
+    <span>Page {{ paginator.current_index }} of {{ paginator.pages | length }}</span>
+    {% if paginator.next %}
+    | <a href="{{ paginator.next }}">Next &raquo;</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}

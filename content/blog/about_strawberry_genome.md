@@ -2,12 +2,14 @@
 title = "実は甘くないイチゴゲノムについて"
 date = 2019-02-26
 draft = false
-tags = []
-# category = "diary"
 order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["Genome", "Biology", "Genome Assembly"]
+categories = ["Biology"]
+
 [extra]
 +++
 

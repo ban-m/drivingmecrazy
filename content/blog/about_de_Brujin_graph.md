@@ -2,12 +2,14 @@
 title = "de Brujin Graphについてメモ"
 date = 2018-09-01
 draft = false
-tags = []
-# category = "diary"
 order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["de Bruijn graph", "Bioinformatics"]
+categories = ["Bioinformatics"]
+
 [extra]
 +++
 

@@ -2,12 +2,14 @@
 title = "塩基配列の圧縮について"
 date = 2019-05-20
 draft = false
-tags = []
-# category = "diary"
 order = 0
 weight = 0
 aliases = []
 template = "page.html"
+[taxonomies]
+tags = ["String Compression", "Bioinformatics"]
+categories = ["Bioinformatics"]
+
 [extra]
 +++
 

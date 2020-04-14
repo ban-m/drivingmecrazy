@@ -19,6 +19,13 @@ default_language = "ja"
 # Theme name to use
 theme = "hyde"
 
+
+taxonomies = [
+           {name = "categories", paginate_by = 5},
+           {name = "tags", paginate_by = 5},
+]
+
+
 # Which theme to use for the code highlighting.
 # See below for list of accepted values
 highlight_theme = "base16-ocean-dark"
@@ -43,8 +50,14 @@ generate_categories_pages = false
 # You can put any kind of data in there and it
 # will be accessible in all templates
 
+
+
 [extra]
 hyde_links = [
     {url = "/about_me", name = "About"},
     {url = "/blog", name = "Blog"},
+    {url = "/tags", name = "Tags"},
+    {url = "/categories", name = "Categories"},
 ]
+
+title_url = "/about_me"
