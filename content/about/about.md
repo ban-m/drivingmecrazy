@@ -1,7 +1,7 @@
 +++
 title = "About"
 description = "about this page and me"
-date = 2018-08-23
+date = 2020-04-14
 draft = false
 path = "./about_me"
 tags = ["about"]
@@ -12,6 +12,7 @@ aliases = []
 template = "page.html"
 [extra]
 +++
+(最終更新：2020/04/14)
 
 ## 何を書いているか
 
@@ -20,10 +21,10 @@ template = "page.html"
 
 ## エンジンについて
 
-[Gutenberg](https://www.getgutenberg.io/)という[Rust](https://www.rust-lang.org)言語製の静的サイトジェネレータを使って
+[Zola](https://www.getzola.org/)という[Rust](https://www.rust-lang.org)言語製の静的サイトジェネレータを使って
 出力し、[netlify](https://www.netlify.com/)を用いてデプロイを行っています。
 
-Gutenbergを使っている理由は、
+Zolaを使っている理由は、
 - JekyllやPelicanは体感として遅すぎるし、やや混沌としている
 - HugoはGoで書かれているので使いたくない
 - Rustなら何かあってもソースコードが読める
