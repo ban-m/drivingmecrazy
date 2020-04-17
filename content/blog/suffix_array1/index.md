@@ -1,7 +1,7 @@
 +++
 title = "Bi-directional Burrows Wheeler Transformationまでの道（1）：Suffix array"
 date = 2020-04-16
-draft = true
+draft = false
 tags = []
 order = 0
 weight = 0
