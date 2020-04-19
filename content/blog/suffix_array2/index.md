@@ -1,6 +1,6 @@
 +++
 title = "Bi-directional Burrows Wheeler Transformationまでの道（1）：Suffix array の線形時間構築"
-date = 2020-04-16
+date = 2020-04-19
 draft = false
 tags = []
 order = 0
