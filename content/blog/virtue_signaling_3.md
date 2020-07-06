@@ -1,5 +1,5 @@
 +++
-title = "書評『Virtue Signaling』その3:政治的クジャク"
+title = "書評『Virtue Signaling』その3:ハンディキャップ原理"
 date = 2020-07-02
 draft = false
 order = 0
